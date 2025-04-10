@@ -4,9 +4,8 @@ import gzipPlugin from 'rollup-plugin-gzip'
 import dotenv from 'dotenv'
 dotenv.config()
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(() => ({
 	plugins: [react()],
-	base: '/portfolio-me',
 	build: {
 		// ...
 		rollupOptions: {
@@ -22,4 +21,4 @@ export default defineConfig({
 			],
 		},
 	},
-})
+}))
