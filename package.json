@@ -1,5 +1,6 @@
 {
-	"name": "finaleseite2",
+	"name": "quangdang-portfolio",
+	"homepage": "https://jasondang91.github.io/portfolio-me/",
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
@@ -11,7 +12,9 @@
 		"check-lint": "eslint . --ext ts --ext tsx --ext js",
 		"check-types": "tsc --pretty --noEmit",
 		"format": "prettier --write .",
-		"preview": "vite preview"
+		"preview": "vite preview",
+		"prdeploy": "npm run build",
+		"deploy": "gh-pages -d dist"
 	},
 	"dependencies": {
 		"@emailjs/browser": "^3.11.0",
@@ -20,6 +23,7 @@
 		"axios": "^1.5.1",
 		"dotenv": "^16.3.1",
 		"framer-motion": "^10.16.4",
+		"gh-pages": "^6.3.0",
 		"gsap": "^3.12.2",
 		"lottie-web": "^5.12.2",
 		"prism-react-renderer": "^2.0.6",

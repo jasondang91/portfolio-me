@@ -14,10 +14,10 @@ const LanguageSwitch: React.FC = () => {
 
 	return (
 		<React.Fragment>
-			<div className='language-switch-container flex flex-row justify-center'>
+			<div className='flex flex-row justify-center language-switch-container'>
 				<div className='flex flex-row items-center gap-x-2'>
 					<button
-						className={`text-md flex flex-row items-center p-1 font-medium text-gray-700 hover:rounded-md hover:border-purple focus:outline-none ${language === 'EN' ? 'active border-b-4 border-purple transition duration-300 ease-in-out focus:border-b-purple' : ''}`}
+						className={`text-md flex flex-row items-center p-1 font-medium text-gray-700 hover:rounded-md hover:border-mint focus:outline-none ${language === 'EN' ? 'active border-b-2 border-mint transition duration-300 ease-in-out focus:border-b-mint' : ''}`}
 						onClick={() => handleLanguageChange('EN')}
 					>
 						<span>
@@ -129,7 +129,7 @@ const LanguageSwitch: React.FC = () => {
 						</span>
 					</button>
 					<button
-						className={`text-md flex flex-row items-center p-1 font-medium text-gray-700 hover:rounded-md hover:border-purple focus:outline-none ${language === 'VI' ? 'active border-b-4 border-purple transition duration-300 ease-in-out focus:border-b-purple' : ''}`}
+						className={`text-md flex flex-row items-center p-1 font-medium text-gray-700 hover:rounded-md hover:border-mint focus:outline-none ${language === 'VI' ? 'active border-b-2 border-mint transition duration-300 ease-in-out focus:border-b-mint' : ''}`}
 						onClick={() => handleLanguageChange('VI')}
 					>
 						<span>
@@ -152,7 +152,7 @@ const LanguageSwitch: React.FC = () => {
 						</span>
 					</button>
 					<button
-						className={`text-md flex flex-row items-center p-1 font-medium text-gray-700 hover:rounded-md hover:border-purple focus:outline-none ${language === 'DE' ? 'active border-b-4 border-purple transition duration-300 ease-in-out focus:border-b-purple' : ''}`}
+						className={`text-md flex flex-row items-center p-1 font-medium text-gray-700 hover:rounded-md hover:border-mint focus:outline-none  ${language === 'DE' ? 'active border-b-2 border-mint transition duration-300 ease-in-out focus:border-b-mint' : ''}`}
 						onClick={() => handleLanguageChange('DE')}
 					>
 						<span>

@@ -25,12 +25,14 @@ import yiiicon from '../../assets/icons/yiiicon.svg'
 import axiosicon from '../../assets/icons/axiosicon.svg'
 import phpicon from '../../assets/icons/phpicon.svg'
 import dearbornmockup from '../../assets/img/1100northdearborn.jpg'
+import polyconsmockup from '../../assets/img/ploycons.jpg'
 import heritagesalumimockup from '../../assets/img/heritagesalumi.jpg'
 import lbrmockup from '../../assets/img/lbr.jpg'
 import allstatemovemockup from '../../assets/img/allstatemover.jpg'
 import elstonmockup from '../../assets/img/elstonmaterials.jpg'
 import lakesidemockup from '../../assets/img/lakeside.jpg'
 import marinabeachmockup from '../../assets/img/marinabeachmotel.jpg'
+import sculptedmockup from '../../assets/img/sculptedbylagree.jpg'
 import jwticon from '../../assets/icons/jwticon.svg'
 import wordpressicon from '../../assets/icons/wordpressicon.svg'
 import shopifyicon from '../../assets/icons/shopifyicon.svg'
@@ -41,7 +43,7 @@ import boBeDoMockup from '../../assets/img/bo-be-do.jpg'
 import purezawoodMockup from '../../assets/img/purezawood.jpg'
 import identitybodypiercingMockup from '../../assets/img/identitybodypiercing.jpg'
 import directLakesideMockup from '../../assets/img/direct-lakeside.jpg'
-import zingmockup from '../../assets/img/zing.png'
+import zingmockup from '../../assets/img/zing.jpg'
 import profilepicture from '../img/profile-me.jpg'
 import caricon from '../../assets/icons/car-icon.svg'
 import drawio from '../../assets/icons/draw-io.svg'
@@ -213,6 +215,69 @@ export const projectsData = [
 		image: identitybodypiercingMockup,
 		deploymenturl: 'https://identitybodypiercing.com/',
 		githuburl: '##',
+		githubicon: FiGithub,
+		deploymenticon: FiLink,
+		colors: {
+			main: 'main-btn',
+			second: 'secondary-btn',
+			icon: 'white',
+			projectcolor: '#E3964A',
+		},
+	},
+	{
+		title: 'Sculptedbylagree',
+		description:
+			'Sculpted By Agree ist eine Website über ein Fitnessstudio in Chicago, Illinois, die Kunden beim Kauf von Trainingspaketen in vielen verschiedenen Formen unterstützt, kombiniert mit dem Mindbody-System.',
+		description_EN:
+			'Sculpted By Agree is a website about a fitness gym in Chicago, Illinois that supports customers to buy training packages in many different forms, combined with the mindbody system.',
+		description_VI:
+			'Sculpted By Agree là trang web về một studio gym fitness tại Chicago, Illinois, Mỹ hỗ trợ khách hàng mua gói tập theo nhiều dạng khác nhau, được kết hợp với hệ thống của mindbody. ',
+		technologies: [
+			{ name: 'NextJS', icon: nextjsicon },
+			{ name: 'Strapi', icon: strapiicon },
+			{ name: 'TailwindCSS', icon: tailwindcssicon },
+			{ name: 'Redux', icon: reduxicon },
+			{ name: 'Typescript', icon: typescripticon },
+			{ name: 'Figma', icon: figmaicon },
+			{ name: 'MySQL', icon: mysqlicon },
+			{ name: 'Axios', icon: axiosicon },
+			{ name: 'Tanstack Query', icon: tanstackqueryicon },
+			{ name: 'AWS', icon: awsicon },
+			{ name: 'S3', icon: s3icon },
+		],
+		image: sculptedmockup,
+		deploymenturl: 'https://sculptedbylagree.com/',
+		githuburl: 'https://github.com/jasondang91',
+		githubicon: FiGithub,
+		deploymenticon: FiLink,
+		colors: {
+			main: 'main-btn',
+			second: 'secondary-btn',
+			icon: 'white',
+			projectcolor: '#E3964A',
+		},
+	},
+	{
+		title: 'Polycons',
+		description:
+			'Bach Khoa Viet Company (Polycons) wurde 2007 gegründet und ist seit 15 Jahren ein junges Unternehmen in der Baubranche. Durch die Teilnahme an Projekten vieler großer in- und ausländischer Wirtschaftsgruppen hat sich das Unternehmen schrittweise weiterentwickelt und sich auf dem heimischen Baumarkt einen Namen gemacht.',
+		description_EN:
+			'Established in 2007, after 15 years of operation, Bach Khoa Viet Company (Polycons) from a young enterprise in the construction industry has gradually developed and shaped its name in the domestic construction market through participating in projects of many large domestic and foreign economic groups.',
+		description_VI:
+			'Thành lập từ năm 2007, trải qua 15 năm hoạt động Công ty Bách Khoa Việt (Polycons) từ một doanh nghiệp non trẻ trong ngành xây dựng đã từng bước phát triển và định hình được tên tuổi trên thị trường xây dựng trong nước thông qua việc đã và đang tham gia các dự án của nhiều tập đoàn kinh tế lớn trong và ngoài nước.',
+		technologies: [
+			{ name: 'Html', icon: htmlicon },
+			{ name: 'CSS', icon: cssicon },
+			{ name: 'Tailwind', icon: tailwindcssicon },
+			{ name: 'JavaScript', icon: javascripticon },
+			{ name: 'Jquery', icon: jqueryicon },
+			{ name: 'PHP', icon: phpicon },
+			{ name: 'MySQL', icon: mysqlicon },
+			{ name: 'Figma', icon: figmaicon },
+		],
+		image: polyconsmockup,
+		deploymenturl: '#',
+		githuburl: 'https://github.com/jasondang91',
 		githubicon: FiGithub,
 		deploymenticon: FiLink,
 		colors: {

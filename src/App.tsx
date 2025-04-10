@@ -15,7 +15,7 @@ function App() {
 						<ActiveSectionContextProvider>
 							<Routes>
 								<Route path='/' element={<Home />}></Route>
-								<Route path='/projects' element={<Projects />}></Route>
+								<Route path='/projects' element={<Projects scale="scale-[25]" opacity="opacity-50" />}></Route>
 								<Route path='/privacy' element={<Home />}></Route>
 							</Routes>
 						</ActiveSectionContextProvider>
