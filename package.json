@@ -1,7 +1,6 @@
 {
 	"name": "quangdang-portfolio",
 	"homepage": "https://jasondang91.github.io/portfolio-me/",
-	"private": true,
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
