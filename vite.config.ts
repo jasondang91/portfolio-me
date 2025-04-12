@@ -4,22 +4,22 @@ import gzipPlugin from 'rollup-plugin-gzip'
 import dotenv from 'dotenv'
 dotenv.config()
 // https://vitejs.dev/config/
-export default defineConfig(() => ({
+export default defineConfig({
 	plugins: [react()],
-	base: '/portfolio-me/',
+	base: '/portfolio-me',
 	build: {
-		// ...
+		outDir: 'dist',
+		assetsDir: 'assets',
 		rollupOptions: {
-			// ...
+			output: {
+				manualChunks: undefined,
+			},
 			plugins: [
-				// ...
 				gzipPlugin({
-					// Wähle die Dateitypen aus, die du komprimieren möchtest
 					filter: /\.(js|css|html|json|svg)$/,
-					// Gzip-Komprimierungseinstellungen (optional)
-					minSize: 1024, // Mindestgröße der komprimierten Datei in Bytes
+					minSize: 1024,
 				}),
 			],
 		},
 	},
-}))
+})
