@@ -9,7 +9,7 @@ import { Fragment } from 'react'
 function App() {
 	return (
 		<Fragment>
-			<BrowserRouter basename="/portfolio-me">
+			<BrowserRouter>
 				<ThemeContextProvider>
 					<LanguageContextProvider>
 						<ActiveSectionContextProvider>
