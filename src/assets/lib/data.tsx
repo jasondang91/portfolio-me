@@ -37,7 +37,6 @@ import jwticon from '../../assets/icons/jwticon.svg'
 import wordpressicon from '../../assets/icons/wordpressicon.svg'
 import shopifyicon from '../../assets/icons/shopifyicon.svg'
 import strapiicon from '../../assets/icons/strapiicon.svg'
-import medusaicon from '../../assets/icons/medusaicon.svg'
 import jqueryicon from '../../assets/icons/jqueryicon.svg'
 import boBeDoMockup from '../../assets/img/bo-be-do.jpg'
 import purezawoodMockup from '../../assets/img/purezawood.jpg'
@@ -706,12 +705,6 @@ export const skillsDataCMS = [
 				icon: strapiicon,
 				color: '#4945ff',
 			},
-			{
-				title: 'MedusaJS',
-				hash: '#MedusaJS',
-				icon: medusaicon,
-				color: '#a732db',
-			},
 		],
 	},
 ] as const
@@ -778,10 +771,10 @@ export const sideBarLeftSocials = [
 
 export const quotesData = [
 	{
-		de: '"Es ist überhaupt nicht wichtig, es beim ersten Mal richtig zu machen. Es ist entscheidend, es beim letzten Mal richtig zu machen."',
-		en: `"It's not at all important to get it right the first time. It's vitally important to get it right the last time."`,
-		vi: `"Việc làm đúng ngay lần đầu tiên không quan trọng chút nào. Điều cực kỳ quan trọng là phải làm đúng lần cuối."`,
-		author: 'Andrew Hunt',
+		de: '"Alles ins Gleichgewicht zu bringen ist gut, alles in Harmonie zu bringen ist besser."',
+		en: `"To put everything in balance is good, to put everything in harmony is better."`,
+		vi: `"Cân bằng mọi thứ là tốt, hài hòa mọi thứ là tốt hơn."`,
+		author: 'Victor Hugo',
 	},
 	{
 		de: '"Das Web dient als Leinwand und der Code als Pinselstrich. Verwenden Sie es, um Ihr digitales Meisterwerk zu erstellen."',
@@ -805,9 +798,9 @@ export const aboutMeData = {
 			icon: hardwareicon,
 		},
 		{
-			title: 'Auf der Überholspur des Lebens',
+			title: 'Instabilität ist die Natur des Lebens',
 			description:
-				'Neben dem Coden befinde ich mich gerne auf der Überholspur – im wahrsten Sinne des Wortes. Autos sind meine Leidenschaft, und ich genieße es, mit PS-starken Maschinen auf unbekannten Straßen unterwegs zu sein.',
+				'Es gibt nur eine Konstante: den Wandel. Wenn uns Veränderungen überraschen oder das Ungewöhnliche beunruhigt, dann verstehen wir das Gesetz nicht.',
 			icon: caricon,
 		},
 		{
@@ -821,13 +814,13 @@ export const aboutMeData = {
 		{
 			title: 'The path to programming!',
 			description:
-				"I used to be a professional gymnast, competing for the country. I played in many international tournaments, when I got injured and couldn't regain my form so I decided to retire and I became a real programmer.",
+				"I used to be a professional gymnast, competing for the nation. I played in many international tournaments, when I got injured and couldn't regain my form so I decided to retire and I became a real programmer.",
 			icon: hardwareicon,
 		},
 		{
-			title: 'On the Fast Lane of Life',
+			title: 'Instability is the nature of life',
 			description:
-				'Besides coding, I like to be on the fast lane - in the truest sense of the word. Cars are my passion, and I enjoy being on unknown roads with powerful machines.',
+				'There is only one constant: change. If we are surprised by change, or alarmed by the unusual, then we do not understand the law.',
 			icon: caricon,
 		},
 		{
@@ -841,19 +834,19 @@ export const aboutMeData = {
 		{
 			title: 'Con đường đến với lập trình!',
 			description:
-				'Tôi từng là vận động viên thể dục chuyên nghiệp, thi đấu cho đất nước. Tôi đã thi đấu ở nhiều giải đấu quốc tế, khi bị chấn thương và không thể lấy lại phong độ nên tôi quyết định giải nghệ và trở thành một lập trình viên thực thụ.',
+				'Tôi từng là vận động viên thể dục chuyên nghiệp, thi đấu cho quốc gia. Tôi đã thi đấu ở nhiều giải đấu quốc tế, khi bị chấn thương và không thể lấy lại phong độ nên tôi quyết định giải nghệ và trở thành một lập trình viên thực thụ.',
 			icon: hardwareicon,
 		},
 		{
-			title: 'On the Fast Lane of Life',
+			title: 'Sự bất ổn là bản chất của cuộc sống!',
 			description:
-				'Besides coding, I like to be on the fast lane - in the truest sense of the word. Cars are my passion, and I enjoy being on unknown roads with powerful machines.',
+				'Chỉ có duy nhất sự đổi thay là không bao giờ thay đổi. Nếu như mình ngạc nhiên về sự đổi thay, mình hốt hoảng về những cái bất bình thường, như vậy mình chưa hiểu về quy luật.',
 			icon: caricon,
 		},
 		{
-			title: 'The Joy of Discovery as a Life Motto',
+			title: 'Niềm vui khám phá như một phương châm sống',
 			description:
-				'My journey as a web developer is only a part of my life path. I live by the motto that the adventure only begins when you leave the familiar behind. Discovering new places and cultures is my form of creative inspiration.',
+				'Hành trình của tôi với tư cách là một nhà phát triển web chỉ là một phần trong con đường cuộc sống của tôi. Tôi sống theo phương châm rằng cuộc phiêu lưu chỉ bắt đầu khi bạn rời xa những điều quen thuộc. Khám phá những địa điểm và nền văn hóa mới là nguồn cảm hứng sáng tạo của tôi.',
 			icon: travelicon,
 		},
 	],
@@ -900,22 +893,7 @@ export const contactData = {
 				vi: 'Vui lòng điền địa chỉ email',
 			},
 			pattern: '[@]{4}',
-		},
-		{
-			name: 'subject',
-			placeholder: {
-				de: 'Deine Betreff',
-				en: 'Your Subject',
-				vi: 'Chủ đề bạn quan tâm',
-			},
-			type: 'text',
-			validation: {
-				de: 'Bitte gebe einen Betreff ein',
-				en: 'Please fill in your subject',
-				vi: 'Vui lòng điền chủ đề bạn quan tâm',
-			},
-			pattern: '{10}',
-		},
+		}
 	],
 	textarea: {
 		placeholder: {

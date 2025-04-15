@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import ThemeSwitch from '../components/theme-switch.tsx'
 import { useSectionInView } from '../assets/lib/hooks.tsx'
 import { projectsData } from '../assets/lib/data'
 import { useLanguage } from '../context/language-context.tsx'
 import { Tooltip as ReactTooltip } from 'react-tooltip'
 import { useTheme } from '../context/theme-context.tsx'
+import { GoArrowLeft } from "react-icons/go";
+
 
 interface RadialGradientProps {
 	scale: string
@@ -16,38 +18,18 @@ interface RadialGradientProps {
 const Projects: React.FC<RadialGradientProps> = ({ scale, opacity, position, overflow }) => {
 	const { ref } = useSectionInView('Home', 0.5)
 	const { language } = useLanguage()
-	const [mouseXpercentage, setMouseXPercentage] = useState<number>(0)
-	const [mouseYpercentage, setMouseYPercentage] = useState<number>(0)
 	const { theme } = useTheme()
 
-	useEffect(() => {
-		const handleMouseMove = (event: MouseEvent) => {
-			const windowWidth = window.innerWidth
-			const windowHeight = window.innerHeight
-			const newMouseXPercentage = Math.round((event.pageX / windowWidth) * 100)
-			const newMouseYPercentage = Math.round((event.pageY / windowHeight) * 100)
-
-			setMouseXPercentage(newMouseXPercentage)
-			setMouseYPercentage(newMouseYPercentage)
-		}
-
-		document.addEventListener('mousemove', handleMouseMove)
-
-		return () => {
-			document.removeEventListener('mousemove', handleMouseMove)
-		}
-	}, [])
-
 	const radialGradientStyle: React.CSSProperties = {
-		background: `radial-gradient(at ${mouseXpercentage}% ${mouseYpercentage}%, #211b48, ${theme === 'light' ? '#ffffff' : '#5417cf'
-			})`,
+		background: `${theme === 'light' ? '#e2d5ff' : '#272057'
+			}`,
 	}
 
 	return (
 		<>
 			<ThemeSwitch />
 			<div
-				className={`radial-gradient-styling absolute ${position} left-0 -z-[1] w-full h-[500px] ${opacity} ${scale} ${overflow}`}
+				className={`radial-gradient-styling absolute ${position} left-0 -z-[1]  h-full w-full  ${opacity} ${scale} ${overflow}`}
 				style={radialGradientStyle}
 			></div>
 			<section
@@ -58,10 +40,8 @@ const Projects: React.FC<RadialGradientProps> = ({ scale, opacity, position, ove
 				<div className='relative mx-auto min-[1921px]:px-96 overflow-x-clip container'>
 					<div className='px-2 py-10'>
 						<div className='flex justify-between items-center'>
-							<p className='font-bold text-gray-800 dark:text-white text-3xl lg:text-4xl capitalize'>
-								Some my works
-							</p>
-							<p className="font-bold text-gray-800 dark:text-white text-3xl lg:text-4xl"><a href={'/'}>back</a></p>
+
+							<a href={'/'} className='flex items-center gap-x-2'> <GoArrowLeft /> back</a>
 						</div>
 
 						<div className='mx-auto py-12 container'>
@@ -72,8 +52,8 @@ const Projects: React.FC<RadialGradientProps> = ({ scale, opacity, position, ove
 
 						<div className='gap-12 grid grid-cols-1 md:grid-cols-2 mt-8 md:mt-16'>
 							{projectsData.map((project, index: number) => (
-								<div className='group overflow-hidden'>
-									<div className='p-5 border-2 group-hover:border-mint border-transparent group-hover:rounded-md transition-all duration-300'>
+								<div className='group cursor-pointer'>
+									<div className='p-5 border-2 hover:border-darkblue dark:hover:border-mint border-transparent rounded-md transition-all duration-300'>
 										<div className='gap-1 grid grid-cols-3 grid-rows-1' key={`project_item-${index}`}>
 											<div className='w-full h-[32rem] overflow-hidden transition-all duration-200'>
 												<img
@@ -82,14 +62,13 @@ const Projects: React.FC<RadialGradientProps> = ({ scale, opacity, position, ove
 													alt=''
 												/>
 											</div>
-											<div className='justify-between col-span-2 lg:mx-6 py-6'>
-												<div className='flex flex-col p-3'>
-													<a
-														href='#'
-														className='font-semibold text-gray-800 dark:text-white text-3xl hover:underline'
+											<div className='justify-between col-span-2 lg:mx-6'>
+												<div className='flex flex-col'>
+													<p
+														className='mb-2 font-semibold text-gray-800 text-3xl hover:underline'
 													>
 														{project.title}
-													</a>
+													</p>
 													<span className='text-lg'>
 														{language === 'DE'
 															? project.description

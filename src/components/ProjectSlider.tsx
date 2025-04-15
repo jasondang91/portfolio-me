@@ -112,7 +112,7 @@ const ProjectSlider: React.FC = () => {
 								clickable: true,
 							}}
 						>
-							{projectsData.slice(0, 4).map((project, index: number) => (
+							{projectsData.slice(0, 5).map((project, index: number) => (
 								<SwiperSlide
 									key={index}
 									className='max-lg:hidden flex flex-row justify-between bg-[--darkblue] p-20 rounded-2xl text-[--white] text-left quote-outer-container'
@@ -178,7 +178,7 @@ const ProjectSlider: React.FC = () => {
 								</SwiperSlide>
 							))}
 						</Swiper>
-						{projectsData.slice(0, 4).map((project, index: number) => (
+						{projectsData.slice(0, 5).map((project, index: number) => (
 							<article
 								key={index}
 								className='min-[1024px]:hidden flex flex-col gap-10 bg-darkblue mb-10 p-8 border-[0.4rem] border-lightblue rounded-xl w-[80%] max-lg:w-[90%] h-full'

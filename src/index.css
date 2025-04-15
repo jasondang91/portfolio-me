@@ -47,8 +47,10 @@ html {
 }
 
 a {
+	font-family: 'kanit-regular';
 	text-decoration: none;
 	font-size: 2rem;
+	line-height: 120%;
 }
 
 img {
@@ -84,12 +86,12 @@ button,
 h4 {
 	font-size: 2.4rem;
 	line-height: 120%;
-	font-family: 'kanit-semibold';
+	font-family: 'kanit-regular';
 }
 
 label {
 	font-size: 2rem;
-	font-family: 'kanit-semibold';
+	font-family: 'kanit-regular';
 }
 
 li {
@@ -304,8 +306,8 @@ a {
 
 .privacy-checkbox label {
 	display: block;
-	width: 35px;
-	height: 35px;
+	width: 30px;
+	height: 30px;
 	cursor: pointer;
 }
 
