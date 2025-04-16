@@ -254,7 +254,7 @@ const Contact: React.FC = () => {
 						</div>
 					</div>
 					<form
-						className='flex flex-col justify-center items-center gap-6 max-lg:p-10 px-32 w-1/2 max-lg:w-full'
+						className='flex flex-col justify-center items-center gap-6 px-8 md:px-32 w-1/2 max-lg:w-full'
 						onSubmit={notifySentForm}
 						autoComplete='off'
 					>

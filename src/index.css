@@ -512,3 +512,18 @@ a {
 	animation: anvil 0.3s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
 	-webkit-animation: anvil 0.3s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
 }
+
+@media screen and (max-width: 768px) {
+	.button-container {
+		margin-top: 2rem;
+	}
+	.button-container button {
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+	}
+	.project-buttons button {
+		width: 100%;
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+	}
+}

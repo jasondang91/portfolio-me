@@ -80,7 +80,7 @@ const ProjectSlider: React.FC = () => {
 								{language === 'DE' ? 'Projekte' : language === 'EN' ? 'Projects' : 'Dự Án'}
 								<span className='text-[--purple]'>/&gt;</span>
 							</p>
-							<h2 className='mb-4 text-[--white]'>
+							<h2 className='mb-4 text-[--white] text-5xl md:text-6xl'>
 								{language === 'DE'
 									? 'Meine Projekte'
 									: language === 'EN'
@@ -118,7 +118,7 @@ const ProjectSlider: React.FC = () => {
 									className='max-lg:hidden flex flex-row justify-between bg-[--darkblue] p-20 rounded-2xl text-[--white] text-left quote-outer-container'
 								>
 									<div className='flex flex-col justify-between gap-12 w-[55%]'>
-										<h2>{project.title}</h2>
+										<h2 className=''>{project.title}</h2>
 
 										<p className='text-white'>
 											{language === 'DE'
@@ -148,7 +148,7 @@ const ProjectSlider: React.FC = () => {
 												))}
 											</div>
 										</div>
-										<div className='flex gap-10 buttons'>
+										<div className='flex gap-10 project-buttons'>
 											<Button
 												label='Live Demo'
 												link={project.deploymenturl}
@@ -189,7 +189,7 @@ const ProjectSlider: React.FC = () => {
 									alt={project.image}
 									className='rounded-3xl w-full h-[35vh] object-cover object-top'
 								/>
-								<div className='flex max-lg:flex-col gap-10 buttons'>
+								<div className='flex max-lg:flex-col gap-4 md:gap-10 project-buttons'>
 									<Button
 										label='Live Demo'
 										link={project.deploymenturl}
@@ -205,7 +205,7 @@ const ProjectSlider: React.FC = () => {
 										iconcolor={project.colors.icon}
 									/>
 								</div>
-								<p className='text-white max-lg:text-4xl'>
+								<p className='text-white text-3xl md:text-4xl'>
 									{language === 'DE'
 										? project.description
 										: language === 'EN'
@@ -214,20 +214,20 @@ const ProjectSlider: React.FC = () => {
 								</p>
 
 								<div className='technologies'>
-									<h3 className='text-white'>
+									<h3 className='text-white text-3xl'>
 										{language === 'DE'
 											? 'Technologien'
 											: language === 'EN'
 												? 'Technologies'
 												: 'Công Nghệ'}
 									</h3>
-									<div className='gap-10 grid grid-cols-3 p-4'>
+									<div className='justify-center items-center gap-5 grid grid-cols-4 p-4'>
 										{project.technologies.map((technology, innerIndex: number) => (
 											<img
 												key={innerIndex}
 												src={technology.icon}
 												alt={`${project.title}-icon`}
-												className='w-[60%] h-[5rem]'
+												className='w-[50%] h-[5rem]'
 												data-tooltip-id='my-tooltip'
 												data-tooltip-content={technology.name}
 											/>

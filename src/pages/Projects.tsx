@@ -15,30 +15,27 @@ interface RadialGradientProps {
 	overflow?: string
 }
 
-const Projects: React.FC<RadialGradientProps> = ({ scale, opacity, position, overflow }) => {
+const Projects: React.FC<RadialGradientProps> = () => {
 	const { ref } = useSectionInView('Home', 0.5)
 	const { language } = useLanguage()
 	const { theme } = useTheme()
 
 	const radialGradientStyle: React.CSSProperties = {
-		background: `${theme === 'light' ? '#e2d5ff' : '#272057'
+		background: `${theme === 'light' ? '#ebe6f5' : '#171635'
 			}`,
 	}
 
 	return (
 		<>
 			<ThemeSwitch />
-			<div
-				className={`radial-gradient-styling absolute ${position} left-0 -z-[1]  h-full w-full  ${opacity} ${scale} ${overflow}`}
-				style={radialGradientStyle}
-			></div>
 			<section
-				className='flex flex-col justify-center items-center gap-10 max-lg:gap-6 h-full hero'
+				className={`flex flex-col justify-center items-center gap-10 max-lg:gap-6 hero`}
+				style={radialGradientStyle}
 				ref={ref}
 				id='home'
 			>
-				<div className='relative mx-auto min-[1921px]:px-96 overflow-x-clip container'>
-					<div className='px-2 py-10'>
+				<div className='relative mx-auto px-4 min-[1921px]:px-96 md:px-0 overflow-x-clip container'>
+					<div className='px-4 py-10'>
 						<div className='flex justify-between items-center'>
 
 							<a href={'/'} className='flex items-center gap-x-2'> <GoArrowLeft /> back</a>
@@ -50,14 +47,14 @@ const Projects: React.FC<RadialGradientProps> = ({ scale, opacity, position, ove
 							</div>
 						</div>
 
-						<div className='gap-12 grid grid-cols-1 md:grid-cols-2 mt-8 md:mt-16'>
+						<div className='gap-12 grid grid-cols-1 md:grid-cols-2 mt-8 md:mt-16 px-0'>
 							{projectsData.map((project, index: number) => (
 								<div className='group cursor-pointer'>
-									<div className='p-5 border-2 hover:border-darkblue dark:hover:border-mint border-transparent rounded-md transition-all duration-300'>
-										<div className='gap-1 grid grid-cols-3 grid-rows-1' key={`project_item-${index}`}>
-											<div className='w-full h-[32rem] overflow-hidden transition-all duration-200'>
+									<div className='p-0 md:p-5 md:border-2 md:dark:hover:border-mint hover:border-darkblue border-transparent rounded-md transition-all duration-300'>
+										<div className='gap-5 md:gap-1 grid grid-cols-1 md:grid-cols-3 grid-rows-1' key={`project_item-${index}`}>
+											<div className='w-full h-[28rem] md:h-[32rem] overflow-hidden transition-all duration-200'>
 												<img
-													className={`h-auto w-full transform opacity-100 transition-all duration-[6000ms] hover:translate-y-[-50%] rounded-md`}
+													className={`h-fit w-full transform opacity-100 transition-all duration-[6000ms] hover:translate-y-[-50%] rounded-md`}
 													src={project.image}
 													alt=''
 												/>
@@ -76,13 +73,13 @@ const Projects: React.FC<RadialGradientProps> = ({ scale, opacity, position, ove
 																? project.description_EN
 																: project.description_VI}
 													</span>
-													<div className='gap-6 grid grid-cols-6 mt-5'>
+													<div className='items-center gap-6 grid grid-cols-6 mt-5'>
 														{project?.technologies?.map((technology, innerIndex: number) => (
 															<img
 																key={innerIndex}
 																src={technology.icon}
 																alt={`${project.title}-icon`}
-																className='w-[60%] h-[5rem]'
+																className='w-[85%] md:w-[60%] h-[3rem] md:h-[5rem] object-contain'
 																data-tooltip-id='my-tooltip'
 																data-tooltip-content={technology.name}
 															/>

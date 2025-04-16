@@ -43,8 +43,8 @@ const AboutMe: React.FC = () => {
 
 	return (
 		<React.Fragment>
-			<section className='about-me relative mt-16 ' id='about-me' ref={ref}>
-				<div className='title-container flex w-1/2 flex-col items-center justify-center gap-6 p-32 max-lg:w-full max-lg:items-start max-lg:p-16'>
+			<section className='relative mt-16 about-me' id='about-me' ref={ref}>
+				<div className='flex flex-col justify-center items-center max-lg:items-start gap-6 p-32 max-lg:p-16 w-1/2 max-lg:w-full title-container'>
 					<motion.div
 						ref={animationReference}
 						style={{
@@ -63,7 +63,7 @@ const AboutMe: React.FC = () => {
 							<span className='text-purple'>/&gt;</span>
 						</p>
 
-						<h2 className='break-words text-center text-[--black] max-lg:text-left'>
+						<h2 className='text-[--black] max-lg:text-left text-center break-words'>
 							{language === 'DE'
 								? aboutMeData.description
 								: language === 'EN'
@@ -72,8 +72,8 @@ const AboutMe: React.FC = () => {
 						</h2>
 					</motion.div>
 				</div>
-				<div className='mb-16 flex flex-row items-center justify-center gap-6 pl-32 pr-32  max-lg:flex-col max-lg:p-16 min-[1921px]:mb-48 min-[1921px]:px-[45rem]'>
-					<article className='pl-60 max-lg:p-0'>
+				<div className='flex flex-row max-lg:flex-col justify-center items-center gap-6 mb-16 min-[1921px]:mb-48 p-12 md:p-16 min-[1921px]:px-[45rem] pr-16 md:pr-32 pl-16 md:pl-32'>
+					<article className='max-lg:p-0 pl-60'>
 						<img src={me} alt={me} />
 					</article>
 					<Swiper
@@ -88,14 +88,14 @@ const AboutMe: React.FC = () => {
 						}}
 						modules={[Autoplay, Pagination, Navigation]}
 						onAutoplayTimeLeft={onAutoplayTimeLeft}
-						className='z-2 relative w-1/2 pb-32 pl-20 pr-20 pt-32 max-lg:w-full max-lg:pb-16 max-lg:pl-0 max-lg:pr-0 max-lg:pt-16 min-[1921px]:w-1/2'
+						className='z-2 relative pt-32 max-lg:pt-16 pr-20 max-lg:pr-0 pb-32 max-lg:pb-16 pl-20 max-lg:pl-0 w-1/2 min-[1921px]:w-1/2 max-lg:w-full'
 					>
 						{paragraphs.map((paragraph, index) => (
 							<SwiperSlide
-								className='flex cursor-grab flex-col items-start justify-center gap-24 rounded-2xl border-[0.4rem] border-solid border-[--lightblue] bg-[--darkblue] p-20 text-left text-[--white] transition-all duration-500 hover:border-purple max-lg:p-10'
+								className='flex flex-col justify-center items-start gap-24 bg-[--darkblue] p-20 max-lg:p-10 border-[--lightblue] border-[0.4rem] hover:border-purple border-solid rounded-2xl text-[--white] text-left transition-all duration-500 cursor-grab'
 								key={index}
 							>
-								<div className='flex flex-row items-center justify-start gap-6 max-lg:flex-col max-lg:justify-center max-lg:text-center '>
+								<div className='flex flex-row max-lg:flex-col justify-start max-lg:justify-center items-center gap-6 max-lg:text-center'>
 									<div>
 										<img src={paragraph.icon} alt={paragraph.icon} className='w-24' />
 									</div>
@@ -103,15 +103,15 @@ const AboutMe: React.FC = () => {
 										<h2>{paragraph.title}</h2>
 									</div>
 								</div>
-								<div className='flex flex-row gap-10 max-lg:flex-col'>
-									<div className='-mb-10 -mt-10 flex flex-col items-center justify-between gap-4 max-lg:m-0 max-lg:flex-row'>
+								<div className='flex flex-row max-lg:flex-col gap-10'>
+									<div className='flex max-lg:flex-row flex-col justify-between items-center gap-4 max-lg:m-0 -mt-10 -mb-10'>
 										<p className='text-white'>
 											<span className='text-purple'>&lt;</span>h3
 											<span className='text-purple'>/&gt;</span>
 										</p>
-										<div className='flex h-[100%] w-1 items-center justify-between max-lg:w-[10rem] max-lg:flex-row  max-lg:bg-lightblue'>
+										<div className='flex max-lg:flex-row justify-between items-center max-lg:bg-lightblue w-1 max-lg:w-[10rem] h-[100%]'>
 											<div></div>
-											<div className='h-[100%] w-[0.5rem] bg-[--lightblue] max-lg:h-[0.25rem]  max-lg:w-10 max-lg:bg-lightblue'></div>
+											<div className='bg-[--lightblue] max-lg:bg-lightblue w-[0.5rem] max-lg:w-10 h-[100%] max-lg:h-[0.25rem]'></div>
 											<div></div>
 										</div>
 										<p className='text-white'>
@@ -120,13 +120,13 @@ const AboutMe: React.FC = () => {
 										</p>
 									</div>
 									<div>
-										<p className='text-4xl text-white'>{paragraph.description}</p>
+										<p className='text-white text-4xl'>{paragraph.description}</p>
 									</div>
 								</div>
 							</SwiperSlide>
 						))}
 						<div
-							className='autoplay-progress absolute bottom-0 right-0 z-10 flex h-24 w-24 items-center justify-center text-4xl font-bold text-purple max-lg:h-16 max-lg:w-16 max-lg:text-3xl '
+							className='right-0 bottom-0 z-10 absolute flex justify-center items-center w-24 max-lg:w-16 h-24 max-lg:h-16 font-bold text-purple max-lg:text-3xl text-4xl autoplay-progress'
 							slot='container-end'
 						>
 							<svg viewBox='0 0 48 48' ref={progressCircle}>
