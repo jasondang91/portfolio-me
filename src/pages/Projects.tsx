@@ -43,7 +43,7 @@ const Projects: React.FC<RadialGradientProps> = () => {
 
 						<div className='mx-auto py-12 container'>
 							<div className='flex justify-center items-center'>
-								<h1 className='font-semibold'>Some my project has done</h1>
+								<h1 className='font-semibold text-4xl md:text-7xl'>Some my project has done</h1>
 							</div>
 						</div>
 
@@ -52,14 +52,14 @@ const Projects: React.FC<RadialGradientProps> = () => {
 								<div className='group cursor-pointer'>
 									<div className='p-0 md:p-5 md:border-2 md:dark:hover:border-mint hover:border-darkblue border-transparent rounded-md transition-all duration-300'>
 										<div className='gap-5 md:gap-1 grid grid-cols-1 md:grid-cols-3 grid-rows-1' key={`project_item-${index}`}>
-											<div className='w-full h-[28rem] md:h-[32rem] overflow-hidden transition-all duration-200'>
+											<div className='w-full h-[30rem] md:h-[32rem] overflow-hidden transition-all duration-200'>
 												<img
-													className={`h-fit w-full transform opacity-100 transition-all duration-[6000ms] hover:translate-y-[-50%] rounded-md`}
+													className={`w-full h-fit object-contain md:transform opacity-100 md:transition-all md:duration-[4000ms] md:hover:translate-y-[-50%] rounded-md`}
 													src={project.image}
 													alt=''
 												/>
 											</div>
-											<div className='justify-between col-span-2 lg:mx-6'>
+											<div className='justify-between col-span-1 md:col-span-2 lg:mx-6'>
 												<div className='flex flex-col'>
 													<p
 														className='mb-2 font-semibold text-gray-800 text-3xl hover:underline'

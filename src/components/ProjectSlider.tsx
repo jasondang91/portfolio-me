@@ -221,13 +221,13 @@ const ProjectSlider: React.FC = () => {
 												? 'Technologies'
 												: 'Công Nghệ'}
 									</h3>
-									<div className='justify-center items-center gap-5 grid grid-cols-4 p-4'>
+									<div className='justify-center items-center gap-3 grid grid-cols-5 p-2'>
 										{project.technologies.map((technology, innerIndex: number) => (
 											<img
 												key={innerIndex}
 												src={technology.icon}
 												alt={`${project.title}-icon`}
-												className='w-[50%] h-[5rem]'
+												className='w-[50%] h-[5rem] object-contain'
 												data-tooltip-id='my-tooltip'
 												data-tooltip-content={technology.name}
 											/>
