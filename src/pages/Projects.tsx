@@ -4,8 +4,8 @@ import { useSectionInView } from '../assets/lib/hooks.tsx'
 import { projectsData } from '../assets/lib/data'
 import { useLanguage } from '../context/language-context.tsx'
 import { Tooltip as ReactTooltip } from 'react-tooltip'
-import { useTheme } from '../context/theme-context.tsx'
 import { GoArrowLeft } from "react-icons/go";
+import RadialGradient from '../components/RadialGradient.tsx'
 
 
 interface RadialGradientProps {
@@ -18,23 +18,19 @@ interface RadialGradientProps {
 const Projects: React.FC<RadialGradientProps> = () => {
 	const { ref } = useSectionInView('Home', 0.5)
 	const { language } = useLanguage()
-	const { theme } = useTheme()
 
-	const radialGradientStyle: React.CSSProperties = {
-		background: `${theme === 'light' ? '#ebe6f5' : '#171635'
-			}`,
-	}
 
 	return (
 		<>
 			<ThemeSwitch />
 			<section
-				className={`flex flex-col justify-center items-center gap-10 max-lg:gap-6 hero`}
-				style={radialGradientStyle}
+				className={`flex flex-col justify-center items-center gap-10 max-lg:gap-6 h-full max-lg:h-full hero`}
 				ref={ref}
 				id='home'
 			>
-				<div className='relative mx-auto px-4 min-[1921px]:px-96 md:px-0 overflow-x-clip container'>
+
+				<div className='relative mx-auto px-4 min-[1921px]:px-96 md:px-0 overflow-x-clip'>
+					<RadialGradient scale='scale-y-125' opacity='opacity-30' />
 					<div className='px-4 py-10'>
 						<div className='flex justify-between items-center'>
 
@@ -52,7 +48,7 @@ const Projects: React.FC<RadialGradientProps> = () => {
 								<div className='group cursor-pointer'>
 									<div className='p-0 md:p-5 md:border-2 md:dark:hover:border-mint hover:border-darkblue border-transparent rounded-md transition-all duration-300'>
 										<div className='gap-5 md:gap-1 grid grid-cols-1 md:grid-cols-3 grid-rows-1' key={`project_item-${index}`}>
-											<div className='w-full h-[30rem] md:h-[32rem] overflow-hidden transition-all duration-200'>
+											<div className='w-full h-[30rem] md:h-[36rem] overflow-hidden transition-all duration-200'>
 												<img
 													className={`w-full h-fit object-contain md:transform opacity-100 md:transition-all md:duration-[4000ms] md:hover:translate-y-[-50%] rounded-md`}
 													src={project.image}
