@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Button from './Button'
 import axios from 'axios'
 import { contactData, toastMessages } from '../assets/lib/data.tsx'
@@ -9,7 +10,7 @@ import { ToastContainer, toast } from 'react-toastify'
 import { useTheme } from '../context/theme-context'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { MdEmail } from 'react-icons/md'
-import { FaLinkedin, FaWhatsappSquare } from 'react-icons/fa'
+import { FaLinkedin, FaTelegramPlane, FaWhatsapp } from 'react-icons/fa'
 import 'react-toastify/dist/ReactToastify.css'
 
 import animationData from '../assets/blob/earth.json'
@@ -17,6 +18,7 @@ import animationData from '../assets/blob/earth.json'
 const BlobObject = React.lazy(() => import('../components/Blob.tsx'))
 
 const Contact: React.FC = () => {
+	const navigate = useNavigate()
 	const [isLoading, setIsLoading] = useState<boolean>(false)
 	const [name, setName] = useState<string>('')
 	const [email, setEmail] = useState<string>('')
@@ -105,6 +107,9 @@ const Contact: React.FC = () => {
 				} else {
 					toast.success(toastMessages.successEmailSent.en)
 				}
+
+				// Redirect to thank you page
+				navigate('/thank-you')
 			}
 		} catch (error) {
 			console.error('Error submitting form:', error)
@@ -240,11 +245,21 @@ const Contact: React.FC = () => {
 							</div>
 							{/* Whatsapp */}
 							<div className='flex items-center gap-4'>
-								<FaWhatsappSquare size={24} className="text-[--purple]" />
+								<FaWhatsapp size={24} className="text-[--purple]" />
 								<div className='flex items-center gap-3'>
 									<p className='text-gray-800'>Whatsapp:</p>
 									<a href="https://wa.link/bh7ydm" target="_blank" rel="noopener noreferrer" className='font-semibold text-[--purple] hover:text-[--purple] dark:hover:text-[--purple] transition-colors'>
 										@quangdang
+									</a>
+								</div>
+							</div>
+							{/* Telegram */}
+							<div className='flex items-center gap-4'>
+								<FaTelegramPlane size={24} className="text-[--purple]" />
+								<div className='flex items-center gap-3'>
+									<p className='text-gray-800'>Telegram:</p>
+									<a href="https://t.me/jasdang47" target="_blank" rel="noopener noreferrer" className='font-semibold text-[--purple] hover:text-[--purple] dark:hover:text-[--purple] transition-colors'>
+										@jasdang47
 									</a>
 								</div>
 							</div>

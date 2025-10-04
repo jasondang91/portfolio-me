@@ -11,9 +11,9 @@ const NavBar: React.FC = () => {
 	const { theme } = useTheme()
 	const { language } = useLanguage()
 
-	const [isSticky, setIsSticky] = useState(false)
+	const [isSticky, setIsSticky] = useState<boolean>(false)
 	const { activeSection, setActiveSection, setTimeOfLastClick } = useActiveSectionContext()
-	const [isMobileMenuActive, setIsMobileMenuActive] = useState(false)
+	const [isMobileMenuActive, setIsMobileMenuActive] = useState<boolean>(false)
 
 	useEffect(() => {
 		const handleScroll = () => {

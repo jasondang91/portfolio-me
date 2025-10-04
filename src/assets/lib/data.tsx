@@ -33,15 +33,16 @@ import elstonmockup from '../../assets/img/elstonmaterials.jpg'
 import lakesidemockup from '../../assets/img/lakeside.jpg'
 import marinabeachmockup from '../../assets/img/marinabeachmotel.jpg'
 import sculptedmockup from '../../assets/img/sculptedbylagree.jpg'
+import przmockup from '../../assets/img/prz-new.jpg'
 import jwticon from '../../assets/icons/jwticon.svg'
 import wordpressicon from '../../assets/icons/wordpressicon.svg'
 import shopifyicon from '../../assets/icons/shopifyicon.svg'
 import strapiicon from '../../assets/icons/strapiicon.svg'
 import jqueryicon from '../../assets/icons/jqueryicon.svg'
 import boBeDoMockup from '../../assets/img/bo-be-do.jpg'
-import purezawoodMockup from '../../assets/img/purezawood.jpg'
 import identitybodypiercingMockup from '../../assets/img/identitybodypiercing.jpg'
 import directLakesideMockup from '../../assets/img/direct-lakeside.jpg'
+import newParadiseBakeryMockup from '../../assets/img/bakery.jpg'
 import zingmockup from '../../assets/img/zing.jpg'
 import profilepicture from '../img/profile-me.jpg'
 import caricon from '../../assets/icons/car-icon.svg'
@@ -53,10 +54,11 @@ import hardwareicon from '../../assets/icons/hardware-icon.svg'
 import nextjsiconwhite from '../../assets/icons/nextjsiconwhite.svg'
 import expressiconwhite from '../../assets/icons/expressiconwhite.svg'
 import { GoHome, GoPerson, GoMail, GoStack, GoProject } from 'react-icons/go'
-import { FiGithub, FiLink, FiLinkedin, FiMail } from 'react-icons/fi'
-import { BsWhatsapp } from "react-icons/bs"
+import { FiGithub, FiLink, FiLinkedin, FiMail, FiDownload } from 'react-icons/fi'
+import { FaTelegramPlane, FaWhatsapp } from 'react-icons/fa'
 import Imprint from '../../components/Imprint'
 import Privacy from '../../components/Privacy'
+import myCv from '../../assets/cv/jasondangx91@gmail.com.pdf'
 
 export const headerIntroData = {
 	title: {
@@ -64,10 +66,10 @@ export const headerIntroData = {
 		en: "Hi, I'm Quang Dang",
 		vi: 'Xin chào, Tôi là Quang Đặng',
 	},
-	subtitle: 'Frontend Engineer ',
+	subtitle: 'Software Engineer ',
 	description: {
 		de: 'Ich bin Quang Dang, ein Frontend-Ingenieur mit dem Ziel, meine Karriere voranzutreiben und an inspirierenden Projekten mitzuwirken. Hier stelle ich meine Arbeit und meine Leidenschaft für die Webentwicklung vor und freue mich darauf, an inspirierenden Projekten mitzuarbeiten, die digitale Lösungen gestalten und zur Zukunft beitragen!',
-		en: "I'm Quang Dang, a frontend engineer with the goal of advancing my career and participating in inspiring projects. Here I present my work and my passion for web development and I’m excited to collaborate on inspiring projects that shape digital solutions and contribute to the future!",
+		en: "I'm Quang Dang, a frontend engineer with the goal of advancing my career and participating in inspiring projects. Here I present my work and my passion for web development and I'm excited to collaborate on inspiring projects that shape digital solutions and contribute to the future!",
 		vi: 'Tôi là Quang Dang, một kỹ sư Frontend với mục tiêu thúc đẩy sự nghiệp của tôi và tham gia vào các dự án truyền cảm hứng. Ở đây tôi trình bày công việc của mình và niềm đam mê phát triển web của tôi và tôi đã hào hứng hợp tác trong các dự án truyền cảm hứng hình thành các giải pháp kỹ thuật số và đóng góp cho tương lai!',
 	},
 	buttons: [
@@ -80,16 +82,20 @@ export const headerIntroData = {
 			},
 			icon: FiMail,
 			color: 'main-btn',
+			download: false,
+			fileUrl: '',
 		},
 		{
-			name: 'Projects',
+			name: 'Resume',
 			label: {
-				de: 'Meine Projekte',
-				en: 'My Projects',
-				vi: 'Một Vài Dự Án Của Tôi',
+				de: 'CV herunterladen',
+				en: 'Download CV',
+				vi: 'Tải CV',
 			},
-			icon: FiGithub,
+			icon: FiDownload,
 			color: 'secondary-btn',
+			download: true,
+			fileUrl: myCv,
 		},
 	],
 	profilepicture: profilepicture,
@@ -117,7 +123,7 @@ export const projectsData = [
 			{ name: 'AWS', icon: awsicon },
 			{ name: 'S3', icon: s3icon },
 		],
-		image: purezawoodMockup,
+		image: przmockup,
 		deploymenturl: '#',
 		githuburl: '#',
 		githubicon: FiGithub,
@@ -132,11 +138,11 @@ export const projectsData = [
 	{
 		title: 'Bo Be Do',
 		description:
-			'Bo Be Do ist eine Restaurantkette, die Restaurantküche auf die Straße bringt, mit dem Motto „Servieren“ und „Lieferkosten minimieren“ für Kunden. Die Website verfügt auch über einen Verwaltungsbereich, mit dem Eigentümer Gerichte und Preise einfach anpassen und tägliche Bestellungen kontrollieren können. Dieser Bereich wurde entwickelt und bereitgestellt, um Kunden zu bedienen.',
+			'Bo Be Do ist eine Restaurantkette, die Restaurantküche auf die Straße bringt, mit dem Motto "Servieren" und "Lieferkosten minimieren" für Kunden. Die Website verfügt auch über einen Verwaltungsbereich, mit dem Eigentümer Gerichte und Preise einfach anpassen und tägliche Bestellungen kontrollieren können. Dieser Bereich wurde entwickelt und bereitgestellt, um Kunden zu bedienen.',
 		description_EN:
 			'Bo Be Do is a chain of eateries that brings restaurant cuisine to the streets with the motto "Serve" and "Minimize delivery costs" for customers. The website also has a management section that helps owners easily adjust dishes, prices, and control daily orders. It has been built and deployed to serve customers.',
 		description_VI:
-			'Bò Bê Đồ là chuỗi quán ăn đưa ẩm thực nhà hàng ra phố với phương châm “Phục vụ” và “Giảm thiểu chi phí giao hàng” cho khách hàng. Website còn có phần quản lý giúp chủ quán dễ dàng điều chỉnh món ăn, giá cả, kiểm soát đơn hàng hàng ngày. Nó đã được xây dựng và triển khai để phục vụ khách hàng.',
+			'Bò Bê Đồ là chuỗi quán ăn đưa ẩm thực nhà hàng ra phố với phương châm "Phục vụ" và "Giảm thiểu chi phí giao hàng" cho khách hàng. Website còn có phần quản lý giúp chủ quán dễ dàng điều chỉnh món ăn, giá cả, kiểm soát đơn hàng hàng ngày. Nó đã được xây dựng và triển khai để phục vụ khách hàng.',
 		technologies: [
 			{ name: 'Html', icon: htmlicon },
 			{ name: 'CSS', icon: cssicon },
@@ -202,7 +208,7 @@ export const projectsData = [
 		description_EN:
 			'A furniture organizer app that we programmed as a duo team with React, MongoDB, Express and Node.js. As a gitmaster, I took over the connection of the frontend to the backend and the database modeling. The app is responsive and mobile-optimized.',
 		description_VI:
-			'Bò Bê Đồ là chuỗi quán ăn đưa ẩm thực nhà hàng ra phố với phương châm “Phục vụ” và “Giảm thiểu chi phí giao hàng” cho khách hàng. Website còn có phần quản lý giúp chủ quán dễ dàng điều chỉnh món ăn, giá cả, kiểm soát đơn hàng hàng ngày. Nó đã được xây dựng và triển khai.',
+			'Bò Bê Đồ là chuỗi quán ăn đưa ẩm thực nhà hàng ra phố với phương châm "Phục vụ" và "Giảm thiểu chi phí giao hàng" cho khách hàng. Website còn có phần quản lý giúp chủ quán dễ dàng điều chỉnh món ăn, giá cả, kiểm soát đơn hàng hàng ngày. Nó đã được xây dựng và triển khai.',
 		technologies: [
 			{ name: 'Html', icon: htmlicon },
 			{ name: 'CSS', icon: cssicon },
@@ -294,7 +300,7 @@ export const projectsData = [
 		description_EN:
 			'A furniture organizer app that we programmed as a duo team with React, MongoDB, Express and Node.js. As a gitmaster, I took over the connection of the frontend to the backend and the database modeling. The app is responsive and mobile-optimized.',
 		description_VI:
-			'Bò Bê Đồ là chuỗi quán ăn đưa ẩm thực nhà hàng ra phố với phương châm “Phục vụ” và “Giảm thiểu chi phí giao hàng” cho khách hàng. Website còn có phần quản lý giúp chủ quán dễ dàng điều chỉnh món ăn, giá cả, kiểm soát đơn hàng hàng ngày. Nó đã được xây dựng và triển khai.',
+			'Bò Bê Đồ là chuỗi quán ăn đưa ẩm thực nhà hàng ra phố với phương châm "Phục vụ" và "Giảm thiểu chi phí giao hàng" cho khách hàng. Website còn có phần quản lý giúp chủ quán dễ dàng điều chỉnh món ăn, giá cả, kiểm soát đơn hàng hàng ngày. Nó đã được xây dựng và triển khai.',
 		technologies: [
 			{ name: 'Html', icon: htmlicon },
 			{ name: 'CSS', icon: cssicon },
@@ -324,7 +330,7 @@ export const projectsData = [
 		description_EN:
 			'A furniture organizer app that we programmed as a duo team with React, MongoDB, Express and Node.js. As a gitmaster, I took over the connection of the frontend to the backend and the database modeling. The app is responsive and mobile-optimized.',
 		description_VI:
-			'Bò Bê Đồ là chuỗi quán ăn đưa ẩm thực nhà hàng ra phố với phương châm “Phục vụ” và “Giảm thiểu chi phí giao hàng” cho khách hàng. Website còn có phần quản lý giúp chủ quán dễ dàng điều chỉnh món ăn, giá cả, kiểm soát đơn hàng hàng ngày. Nó đã được xây dựng và triển khai.',
+			'Bò Bê Đồ là chuỗi quán ăn đưa ẩm thực nhà hàng ra phố với phương châm "Phục vụ" và "Giảm thiểu chi phí giao hàng" cho khách hàng. Website còn có phần quản lý giúp chủ quán dễ dàng điều chỉnh món ăn, giá cả, kiểm soát đơn hàng hàng ngày. Nó đã được xây dựng và triển khai.',
 		technologies: [
 			{ name: 'Html', icon: htmlicon },
 			{ name: 'CSS', icon: cssicon },
@@ -336,6 +342,36 @@ export const projectsData = [
 			{ name: 'Figma', icon: figmaicon },
 		],
 		image: heritagesalumimockup,
+		deploymenturl: '#',
+		githuburl: '##',
+		githubicon: FiGithub,
+		deploymenticon: FiLink,
+		colors: {
+			main: 'main-btn',
+			second: 'secondary-btn',
+			icon: 'white',
+			projectcolor: '#E3964A',
+		},
+	},
+	{
+		title: 'New Paradise Backery',
+		description:
+			'New Paradise Bakery ist eine Produkteinführungswebsite eines auf Kuchen und Desserts spezialisierten Geschäfts in Chicago, USA.',
+		description_EN:
+			'New Paradise Bakery is a product introduction website of a shop specializing in cakes and desserts in Chicago, USA.',
+		description_VI:
+			'Trang New Paradise Backery là trang web giới thiệu sản phẩm của một cửa hàng chuyên về các loại bánh ngọt và tráng miệng tại Chicago, USA.',
+		technologies: [
+			{ name: 'Html', icon: htmlicon },
+			{ name: 'CSS', icon: cssicon },
+			{ name: 'JavaScript', icon: javascripticon },
+			{ name: 'Jquery', icon: jqueryicon },
+			{ name: 'Shopify', icon: shopifyicon },
+			{ name: 'PHP', icon: phpicon },
+			{ name: 'MySQL', icon: mysqlicon },
+			{ name: 'Figma', icon: figmaicon },
+		],
+		image: newParadiseBakeryMockup,
 		deploymenturl: '#',
 		githuburl: '##',
 		githubicon: FiGithub,
@@ -541,7 +577,7 @@ export const liveTickerData = {
 
 export const skillsDataWeb = [
 	{
-		skillsTitle: 'WebDevelopment',
+		skillsTitle: 'Development',
 		skills: [
 			{
 				title: 'HTML',
@@ -743,8 +779,8 @@ export const navLinks = [
 ] as const
 
 export const FooterLinks = [
-	{ de: 'Impressum', en: 'Imprint', hash: '#imprint', data: <Imprint /> },
-	{ de: 'Datenschutz', en: 'Privacy', hash: '#privacy', data: <Privacy /> },
+	{ de: 'Blog', en: 'Blog', vn: 'Tin tức', hash: '#blog', data: <Imprint /> },
+	{ de: 'Datenschutz', en: 'Privacy', vn: 'Bảo mật', hash: '#privacy', data: <Privacy /> },
 ] as const
 
 export const sideBarRightMail = {
@@ -760,8 +796,13 @@ export const sideBarLeftSocials = [
 	},
 	{
 		link: 'https://wa.link/bh7ydm',
-		icon: BsWhatsapp,
+		icon: FaWhatsapp,
 		altimgname: 'whatsapp',
+	},
+	{
+		link: 'https://t.me/jasdang47',
+		icon: FaTelegramPlane,
+		altimgname: 'telegram',
 	},
 	{
 		link: 'mailto:jasondangx91@gmail.com',

@@ -2,6 +2,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { sideBarLeftSocials } from '../assets/lib/data'
+import { useLanguage } from '../context/language-context'
 
 interface SocialLink {
 	link: string
@@ -11,19 +12,21 @@ interface SocialLink {
 }
 
 const SiteBarLeft: React.FC = () => {
+	const { language } = useLanguage()
+
 	return (
 		<div
-			className='absolute left-0 top-0 ml-8 flex flex-col items-center justify-center max-lg:ml-4 max-lg:h-[10%]'
+			className='top-0 left-0 absolute flex flex-col justify-center items-center ml-0 max-lg:ml-0 max-lg:h-[10%]'
 			id='home'
 		>
-			<div className='flex flex-col items-center justify-center'>
-				<div className='h-[40vh] w-[0.25rem] bg-[--lightblue]'></div>
+			<div className='flex flex-col justify-center items-center'>
+				<div className='bg-[--lightblue] w-[0.25rem] h-[40vh]'></div>
 			</div>
-			<div className='mt-4 flex flex-col gap-4'>
+			<div className='flex flex-col items-center gap-4 mt-4'>
 				{sideBarLeftSocials.map((social: SocialLink, index: number) => (
 					<Link
 						to={social.link}
-						className='mb-2 block hover:scale-110'
+						className='block mb-2 hover:scale-110'
 						key={index}
 						target='_blank'
 						rel='noopener noreferrer'
@@ -36,6 +39,14 @@ const SiteBarLeft: React.FC = () => {
 						)}
 					</Link>
 				))}
+				<div className='mt-10 -rotate-90'>
+					<Link
+						to={'#'}
+						className="drop-shadow-[0_0_8px_--lightblue] text-[--lightblue] hover:text-[--mint] animate-pulse"
+					>
+						{language === 'DE' ? 'Teilen' : language === 'EN' ? 'Sharing' : 'Chia sẻ'}
+					</Link>
+				</div>
 			</div>
 		</div>
 	)

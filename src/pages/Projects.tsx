@@ -6,6 +6,7 @@ import { useLanguage } from '../context/language-context.tsx'
 import { Tooltip as ReactTooltip } from 'react-tooltip'
 import { GoArrowLeft } from "react-icons/go";
 import RadialGradient from '../components/RadialGradient.tsx'
+import Footer from '../components/Footer.tsx'
 
 
 interface RadialGradientProps {
@@ -19,7 +20,6 @@ const Projects: React.FC<RadialGradientProps> = () => {
 	const { ref } = useSectionInView('Home', 0.5)
 	const { language } = useLanguage()
 
-
 	return (
 		<>
 			<ThemeSwitch />
@@ -30,7 +30,7 @@ const Projects: React.FC<RadialGradientProps> = () => {
 			>
 
 				<div className='relative mx-auto px-4 min-[1921px]:px-96 md:px-0 overflow-x-clip'>
-					<RadialGradient scale='scale-y-125' opacity='opacity-30' />
+					<RadialGradient scale='scale-y-100' opacity='opacity-30' />
 					<div className='px-4 py-10'>
 						<div className='flex justify-between items-center'>
 
@@ -81,9 +81,9 @@ const Projects: React.FC<RadialGradientProps> = () => {
 															/>
 														))}
 													</div>
-													<span className='mt-12 text-gray-500 dark:text-gray-300 text-lg underline'>
+													{/* <span className='mt-12 text-gray-500 dark:text-gray-300 text-lg underline'>
 														Live preview
-													</span>
+													</span> */}
 												</div>
 											</div>
 										</div>
@@ -92,8 +92,12 @@ const Projects: React.FC<RadialGradientProps> = () => {
 							))}
 						</div>
 					</div>
+					<div className='flex justify-center items-center mt-16 py-16'>
+						<p className='text-[26px]'>More...</p>
+					</div>
 				</div>
 			</section>
+			<Footer />
 			<ReactTooltip
 				place='top'
 				id='my-tooltip'

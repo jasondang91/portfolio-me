@@ -6,11 +6,28 @@ import { useSectionInView } from '../assets/lib/hooks'
 import { useActiveSectionContext } from '../context/active-section-context'
 import { useLanguage } from '../context/language-context'
 import { BsMouse } from 'react-icons/bs'
+import { IconType } from 'react-icons'
 
 const HeaderIntro: React.FC = () => {
 	const { language } = useLanguage()
 	const { ref } = useSectionInView('Home', 0.5)
 	const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext()
+
+	const handleButtonClick = (button: {
+		name: "Home" | "Skills" | "Projects" | "About me" | "Contact" | "Resume";
+		label: { de: string; en: string; vi: string };
+		icon: IconType;
+		color: string;
+		download?: boolean;
+		fileUrl?: string;
+	}) => {
+		if (button.download) {
+			window.open(button.fileUrl, '_blank')
+		} else if (button.name !== "Resume") {
+			setActiveSection(button.name)
+			setTimeOfLastClick(Date.now())
+		}
+	}
 
 	return (
 		<section
@@ -51,12 +68,9 @@ const HeaderIntro: React.FC = () => {
 							language === 'DE' ? button.label.de : language === 'EN' ? button.label.en : button.label.vi
 						}
 						iconSVG={button.icon}
-						link={`#${button.name.toLocaleLowerCase()}`}
+						link={button.download ? undefined : `#${button.name.toLocaleLowerCase()}`}
 						buttoncolor={button.color}
-						onClick={() => {
-							setActiveSection(button.name)
-							setTimeOfLastClick(Date.now())
-						}}
+						onClick={() => handleButtonClick(button)}
 					/>
 				))}
 			</div>

@@ -11,9 +11,6 @@ import { useSectionInView } from '../assets/lib/hooks'
 import { useLanguage } from '../context/language-context'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { BsBoxArrowUpRight } from "react-icons/bs";
-
-
-
 import 'react-toastify/dist/ReactToastify.css'
 import 'swiper/css'
 import 'swiper/css/effect-cards'
@@ -112,7 +109,7 @@ const ProjectSlider: React.FC = () => {
 								clickable: true,
 							}}
 						>
-							{projectsData.slice(0, 5).map((project, index: number) => (
+							{projectsData.slice(0, 7).map((project, index: number) => (
 								<SwiperSlide
 									key={index}
 									className='max-lg:hidden flex flex-row justify-between bg-[--darkblue] p-20 rounded-2xl text-[--white] text-left quote-outer-container'

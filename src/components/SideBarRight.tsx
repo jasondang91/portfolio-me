@@ -4,17 +4,17 @@ import React from 'react'
 
 const SiteBarLeft: React.FC = () => {
 	return (
-		<div className='absolute bottom-0 right-0 mr-8  flex h-[60vh] flex-col  items-center max-lg:hidden '>
-			<div className=' flex h-[65%] w-[4rem] items-center justify-center '>
+		<div className='max-lg:hidden right-0 bottom-0 absolute flex flex-col items-center mr-8 h-[60vh]'>
+			<div className='flex justify-center items-center w-[4rem] h-[65%]'>
 				<Link
 					to={sideBarRightMail.link}
-					className=' absolute right-0 top-0 mb-2 h-[50%] text-[--purple]  text-gray-700 transition-all duration-200 [writing-mode:vertical-lr] hover:text-[--lightblue] '
+					className='top-0 right-0 absolute mb-2 h-[50%] text-[--lightblue] hover:text-[--mint] transition-all duration-200 [writing-mode:vertical-lr]'
 				>
 					{sideBarRightMail.text}
 				</Link>
 			</div>
-			<div className='flex h-[70%] flex-col items-center justify-center '>
-				<div className=' h-[100%] w-[0.25rem] bg-[--lightblue]'></div>
+			<div className='flex flex-col justify-center items-center h-[70%]'>
+				<div className='bg-[--lightblue] w-[0.25rem] h-[100%]'></div>
 			</div>
 		</div>
 	)

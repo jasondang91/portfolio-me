@@ -23,13 +23,13 @@ const Footer: React.FC = () => {
 	const { theme } = useTheme()
 
 	return (
-		<footer className='relative z-[1] flex items-center justify-around gap-10 bg-darkblue p-10 max-lg:flex-col max-lg:pb-48'>
+		<footer className='z-[1] relative flex max-lg:flex-col justify-around items-center gap-10 bg-darkblue p-10 max-lg:pb-48'>
 			<div className='flex gap-10'>
 				{FooterLinks.map((link, index) => (
 					<Popup
 						trigger={
-							<Link to='#' className='text-2xl font-bold text-white hover:text-purple'>
-								{language === 'DE' ? link.de : link.en}
+							<Link to='#' className='font-bold text-white hover:text-purple text-2xl'>
+								{language === 'DE' ? link.de : language === 'EN' ? link.en : link.vn}
 							</Link>
 						}
 						modal
@@ -39,12 +39,11 @@ const Footer: React.FC = () => {
 							(
 								<>
 									<div
-										className={`dark-shadow relative  max-h-[80vh] overflow-y-auto rounded-3xl p-32 max-lg:p-16 ${
-											theme === 'dark' ? 'bg-darkblue' : 'bg-white'
-										}`}
+										className={`dark-shadow relative  max-h-[80vh] overflow-y-auto rounded-3xl p-32 max-lg:p-16 ${theme === 'dark' ? 'bg-darkblue' : 'bg-white'
+											}`}
 									>
 										<button
-											className='dark-shadow fixed right-0 top-0 z-10 m-4 rounded-2xl bg-purple p-4 text-white transition-all duration-500 hover:bg-lightblue'
+											className='top-0 right-0 z-10 fixed bg-purple hover:bg-lightblue dark-shadow m-4 p-4 rounded-2xl text-white transition-all duration-500'
 											onClick={() => {
 												close()
 											}}
@@ -59,11 +58,11 @@ const Footer: React.FC = () => {
 					</Popup>
 				))}
 			</div>
-			<div className='socials flex gap-10 '>
+			<div className='flex gap-10 socials'>
 				{sideBarLeftSocials.map((social: SocialLink, index: number) => (
 					<Link
 						to={social.link}
-						className='mb-2 block '
+						className='block mb-2'
 						key={index}
 						target='_blank'
 						rel='noopener noreferrer'
