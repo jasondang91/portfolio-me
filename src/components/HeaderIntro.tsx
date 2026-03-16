@@ -63,7 +63,7 @@ const HeaderIntro: React.FC = () => {
 				{headerIntroData.buttons.map((button, index) => (
 					<Button
 						key={index}
-						className='px-12 py-7'
+						className=''
 						label={
 							language === 'DE' ? button.label.de : language === 'EN' ? button.label.en : button.label.vi
 						}

@@ -88,7 +88,7 @@ const NavBar: React.FC = () => {
 			{!isMobileMenuActive && (
 				<nav
 					className={`top-0 flex flex-row items-center justify-center gap-24 p-5 font-semibold max-lg:hidden ${isSticky && !isMobileMenuActive
-						? `sticky top-10 z-50 ml-auto mr-auto  w-max  rounded-full border border-white border-opacity-40 bg-opacity-70 px-16 py-5 shadow-lg shadow-black/[0.03]  backdrop-blur-[0.5rem] transition-all duration-100 ease-in-out ${theme === 'dark' ? 'bg-darkblue' : 'bg-white'
+						? `sticky top-10 z-50 ml-auto mr-auto  w-max  rounded-full border border-white border-opacity-40 bg-opacity-80 px-16 py-5 shadow-lg shadow-black/[0.05]  backdrop-blur-[0.5rem] transition-all duration-100 ease-in-out ${theme === 'dark' ? 'bg-[rgba(26, 34, 56, 0.40)]' : 'bg-white'
 						}`
 						: ''
 						}

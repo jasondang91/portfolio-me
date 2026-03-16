@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useRef } from 'react'
-import me from '../assets/img/profile.png'
+import me from '../assets/img/manga-profile.png'
 import { aboutMeData } from '../assets/lib/data'
 import { Autoplay, Pagination, Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -73,8 +73,34 @@ const AboutMe: React.FC = () => {
 					</motion.div>
 				</div>
 				<div className='flex flex-row max-lg:flex-col justify-center items-center gap-6 mb-16 min-[1921px]:mb-48 p-12 md:p-16 min-[1921px]:px-[45rem] pr-16 md:pr-32 pl-16 md:pl-32'>
-					<article className='max-lg:p-0 pl-60'>
-						<img src={me} alt={me} />
+					<article
+						className='max-lg:p-0 pl-60'
+						style={{ perspective: '600px' }}
+						onMouseMove={(e) => {
+							const el = e.currentTarget
+							const rect = el.getBoundingClientRect()
+							const x = e.clientX - rect.left
+							const y = e.clientY - rect.top
+							const cx = rect.width / 2
+							const cy = rect.height / 2
+							const rotateX = ((y - cy) / cy) * -12
+							const rotateY = ((x - cx) / cx) * 12
+							const img = el.querySelector('img') as HTMLImageElement | null
+							if (img) {
+								img.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05,1.05,1.05)`
+							}
+						}}
+						onMouseLeave={(e) => {
+							const img = e.currentTarget.querySelector('img') as HTMLImageElement | null
+							if (img) img.style.transform = 'rotateX(0deg) rotateY(0deg) scale3d(1,1,1)'
+						}}
+					>
+						<img
+							src={me}
+							alt={me}
+							className='rounded-2xl shadow-2xl'
+							style={{ transition: 'transform 0.15s ease-out', transformStyle: 'preserve-3d', willChange: 'transform' }}
+						/>
 					</article>
 					<Swiper
 						spaceBetween={100}
@@ -92,8 +118,15 @@ const AboutMe: React.FC = () => {
 					>
 						{paragraphs.map((paragraph, index) => (
 							<SwiperSlide
-								className='flex flex-col justify-center items-start gap-24 bg-[--darkblue] p-20 max-lg:p-10 border-[--lightblue] border-[0.4rem] hover:border-purple border-solid rounded-2xl text-[--white] text-left transition-all duration-500 cursor-grab'
 								key={index}
+								className='flex flex-col justify-center items-start gap-24 p-20 max-lg:p-10 rounded-2xl text-[--white] text-left transition-all duration-500 cursor-grab'
+								style={{
+									background: 'rgba(255, 255, 255, 0.06)',
+									backdropFilter: 'blur(24px)',
+									WebkitBackdropFilter: 'blur(24px)',
+									border: '2px solid rgba(139, 92, 246, 0.35)',
+									boxShadow: '0 8px 32px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.08)',
+								}}
 							>
 								<div className='flex flex-row max-lg:flex-col justify-start max-lg:justify-center items-center gap-6 max-lg:text-center'>
 									<div>
@@ -111,7 +144,7 @@ const AboutMe: React.FC = () => {
 										</p>
 										<div className='flex max-lg:flex-row justify-between items-center max-lg:bg-lightblue w-1 max-lg:w-[10rem] h-[100%]'>
 											<div></div>
-											<div className='bg-[--lightblue] max-lg:bg-lightblue w-[0.5rem] max-lg:w-10 h-[100%] max-lg:h-[0.25rem]'></div>
+											<div className='bg-[--purple] max-lg:bg-lightblue w-[0.5rem] max-lg:w-10 h-[100%] max-lg:h-[0.25rem]'></div>
 											<div></div>
 										</div>
 										<p className='text-white'>

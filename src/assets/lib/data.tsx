@@ -62,8 +62,8 @@ import myCv from '../../assets/cv/jasondangx91@gmail.com.pdf'
 
 export const headerIntroData = {
 	title: {
-		de: 'Hallo, ich bin Quang Dang',
-		en: "Hi, I'm Quang Dang",
+		de: 'Hallo, ich bin Jason Dang',
+		en: "Hi, I'm Jason Dang",
 		vi: 'Xin chào, Tôi là Quang Đặng',
 	},
 	subtitle: 'Software Engineer ',
@@ -569,9 +569,9 @@ export const projectsData = [
 
 export const liveTickerData = {
 	content: {
-		de: 'Weitere Projekte auf Github',
-		en: 'More Projects on Github',
-		vi: 'Xem Thêm Dự Án Trên Github',
+		de: 'Weitere Projekte',
+		en: 'More Projects',
+		vi: 'Xem Thêm Dự Án',
 	},
 } as const
 

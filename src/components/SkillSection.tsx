@@ -41,8 +41,15 @@ const SkillSection: React.FC<SkillSectionProps> = ({ skillsData, theme }) => {
 
 	return (
 		<article
-			className={`relative z-10 grid h-auto grid-cols-4 gap-5 md:gap-10 rounded-2xl p-8 pt-32 max-lg:w-full max-lg:grid-cols-3 max-lg:p-8 max-lg:pt-32 ${theme === 'dark' ? 'dark-mode-shadow bg-[--blackblue]' : 'dark-shadow bg-[--icewhite]'
+			className={`relative z-10 grid h-auto grid-cols-4 gap-5 md:gap-10 rounded-2xl p-8 pt-32 max-lg:w-full max-lg:grid-cols-3 max-lg:p-8 max-lg:pt-32 ${theme === 'dark' ? 'dark-mode-shadow' : 'dark-shadow'
 				}`}
+			style={{
+				background: 'rgba(26, 34, 56, 0.40)',
+				backdropFilter: 'blur(80px)',
+				WebkitBackdropFilter: 'blur(80px)',
+				border: '1px solid rgba(139, 92, 246, 0.30)',
+				boxShadow: '0 8px 32px rgba(26, 34, 56,0.35), inset 0 1px 0 rgba(255,255,255,0.08)',
+			}}
 		>
 			<div className={`absolute left-1/2 top-10 -translate-x-1/2 transform rounded-t-xl px-4  py-2 `}>
 				<p className='font-black text-4xl'>

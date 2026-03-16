@@ -23,8 +23,8 @@ const Footer: React.FC = () => {
 	const { theme } = useTheme()
 
 	return (
-		<footer className='z-[1] relative flex max-lg:flex-col justify-around items-center gap-10 bg-darkblue p-10 max-lg:pb-48'>
-			<div className='flex gap-10'>
+		<footer className='z-[1] relative flex flex-col max-lg:flex-col justify-around items-center gap-4 bg-darkblue p-10 max-lg:pb-48'>
+			<div className='flex gap-8 pb-4'>
 				{FooterLinks.map((link, index) => (
 					<Popup
 						trigger={
@@ -78,8 +78,10 @@ const Footer: React.FC = () => {
 					</Link>
 				))}
 			</div>
-			<div>
-				<Suspense fallback={<div>Loading...</div>}>{/* <LazyServiceStatus /> */}</Suspense>
+			<div className='flex items-center justify-center p-3'>
+				<p className='text-white text-[1.4rem]'>
+					Developed with ❤️ by Jason Dang
+				</p>
 			</div>
 		</footer>
 	)

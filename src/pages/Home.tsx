@@ -1,7 +1,6 @@
 import React, { lazy, Suspense } from 'react'
 import Layout from '../layout/layout'
 import Footer from '../components/Footer'
-import ThemeSwitch from '../components/theme-switch'
 import { useTheme } from '../context/theme-context'
 import { ScrollProgress } from '../components/ScrollProgress'
 import Divider from '../components/Divider'
@@ -22,7 +21,6 @@ const Home: React.FC = () => {
 	return (
 		<>
 			<Layout>
-				<ThemeSwitch />
 				<header className='h-screen'>
 					<ScrollProgress position={'left'} color={'purple'} height={3} smoothness={true} />
 					<Suspense fallback={<div>Loading...</div>}>

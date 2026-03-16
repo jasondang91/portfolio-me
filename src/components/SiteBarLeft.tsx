@@ -16,7 +16,7 @@ const SiteBarLeft: React.FC = () => {
 
 	return (
 		<div
-			className='top-0 left-0 absolute flex flex-col justify-center items-center ml-0 max-lg:ml-0 max-lg:h-[10%]'
+			className='top-0 left-0 absolute flex flex-col justify-center items-center -ml-2 max-lg:-ml-[1.5rem] max-lg:h-[10%]'
 			id='home'
 		>
 			<div className='flex flex-col justify-center items-center'>

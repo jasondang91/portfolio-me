@@ -11,7 +11,7 @@ import {
 import { wrap } from '@motionone/utils'
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../context/language-context'
-import { sideBarLeftSocials, liveTickerData } from '../assets/lib/data'
+import { liveTickerData } from '../assets/lib/data'
 
 interface ParallaxProps {
 	children: React.ReactNode
@@ -123,7 +123,7 @@ export default function LiveTicker() {
 		<>
 			<div className='z-[1] relative flex justify-center items-center bg-mint w-full h-[4.8vh] min-[1921px]:h-[3.3vh] -rotate-3 scale-110'>
 				<ParallaxText baseVelocity={-2}>
-					<Link to={sideBarLeftSocials[1].link} target='_blank' rel='noopener noreferrer' className='text-black'>
+					<Link to={'/projects'} className='text-black'>
 						<span className='text-[--purple]'>&lt;</span>
 						{language === 'DE'
 							? liveTickerData.content.de

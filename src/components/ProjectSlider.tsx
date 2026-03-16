@@ -85,7 +85,7 @@ const ProjectSlider: React.FC = () => {
 										: 'Một Vài Dự Án Của Tôi'}
 							</h2>
 
-							<a href='/projects' className='flex justify-center items-center gap-x-2 mb-16 font-[200] text-[--white] text-[16px] text-mint underline'>
+							<a href='/projects' className='flex justify-center items-center gap-x-2 mb-16 font-[200] text-[--white] text-[1.4rem] text-mint'>
 								{language === 'DE'
 									? 'Mehr von meinen Projekten ansehen'
 									: language === 'EN'
@@ -98,7 +98,7 @@ const ProjectSlider: React.FC = () => {
 							effect={'cards'}
 							grabCursor={true}
 							modules={[EffectCards, Autoplay, Pagination]}
-							className='max-lg:hidden min-[1921px]:px-96 w-[60vw]'
+							className='max-lg:hidden min-[1921px]:px-20 w-[52vw]'
 							loop={true}
 							autoplay={{
 								delay: 4000,
@@ -112,40 +112,47 @@ const ProjectSlider: React.FC = () => {
 							{projectsData.slice(0, 7).map((project, index: number) => (
 								<SwiperSlide
 									key={index}
-									className='max-lg:hidden flex flex-row justify-between bg-[--darkblue] p-20 rounded-2xl text-[--white] text-left quote-outer-container'
+									className='max-lg:hidden flex flex-row justify-between p-20 rounded-2xl text-[--white] text-left quote-outer-container'
+									style={{
+										background: 'rgba(26, 34, 56, 0.40)',
+										backdropFilter: 'blur(25px)',
+										WebkitBackdropFilter: 'blur(25px)',
+										border: '1px solid rgba(139, 92, 246, 0.30)',
+										boxShadow: '0 8px 32px rgba(26, 34, 56,0.35), inset 0 1px 0 rgba(255,255,255,0.08)',
+									}}
 								>
 									<div className='flex flex-col justify-between gap-12 w-[55%]'>
 										<h2 className=''>{project.title}</h2>
 
-										<p className='text-white'>
+										<p className='text-icewhite text-[1.2rem] md:text-[1.5rem] leading-relaxed'>
 											{language === 'DE'
 												? project.description
 												: language === 'EN'
 													? project.description_EN
 													: project.description_VI}
 										</p>
-										<div className='technologies'>
-											<h3>
+										<div className='technologies '>
+											<h3 className='text-[1.8rem] underline'>
 												{language === 'DE'
 													? 'Technologien'
 													: language === 'EN'
 														? 'Technologies'
 														: 'Công Nghệ'}
 											</h3>
-											<div className='gap-10 grid grid-cols-6 p-4'>
+											<div className='gap-6 grid grid-cols-6 mt-8'>
 												{project.technologies.map((technology, innerIndex: number) => (
 													<img
 														key={innerIndex}
 														src={technology.icon}
 														alt={`${project.title}-icon`}
-														className='w-[60%] h-[5rem]'
+														className='w-[50%] h-[4rem]'
 														data-tooltip-id='my-tooltip'
 														data-tooltip-content={technology.name}
 													/>
 												))}
 											</div>
 										</div>
-										<div className='flex gap-10 project-buttons'>
+										<div className='flex gap-6 project-buttons'>
 											<Button
 												label='Live Demo'
 												link={project.deploymenturl}
@@ -153,13 +160,6 @@ const ProjectSlider: React.FC = () => {
 												buttoncolor={project.colors.main}
 												iconcolor={project.colors.icon}
 												onClick={notifyServerRequest}
-											/>
-											<Button
-												label='Github Repository'
-												link={project.githuburl}
-												iconSVG={project.githubicon}
-												buttoncolor={project.colors.main}
-												iconcolor={project.colors.icon}
 											/>
 										</div>
 									</div>
@@ -178,7 +178,14 @@ const ProjectSlider: React.FC = () => {
 						{projectsData.slice(0, 5).map((project, index: number) => (
 							<article
 								key={index}
-								className='min-[1024px]:hidden flex flex-col gap-10 bg-darkblue mb-10 p-8 border-[0.4rem] border-lightblue rounded-xl w-[80%] max-lg:w-[90%] h-full'
+								className='min-[1024px]:hidden flex flex-col gap-10 mb-10 p-8 rounded-xl w-[80%] max-lg:w-[90%] h-full'
+								style={{
+									background: 'rgba(255, 255, 255, 0.06)',
+									backdropFilter: 'blur(24px)',
+									WebkitBackdropFilter: 'blur(24px)',
+									border: '2px solid rgba(139, 92, 246, 0.30)',
+									boxShadow: '0 8px 32px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.08)',
+								}}
 							>
 								<h2 className='text-white'>{project.title}</h2>
 								<img
@@ -245,7 +252,7 @@ const ProjectSlider: React.FC = () => {
 					backgroundColor: 'var(--purple)',
 				}}
 			/>
-		</React.Fragment>
+		</React.Fragment >
 	)
 }
 
