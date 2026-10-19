@@ -83,33 +83,33 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
 	 * dynamically generated number of children.
 	 */
 	return (
-		<div className='flex flex-nowrap m-0 overflow-hidden whitespace-nowrap'>
-			<motion.div className='flex flex-nowrap font-semibold text-9xl whitespace-nowrap' style={{ x }}>
+		<div className='m-0 flex flex-nowrap overflow-hidden whitespace-nowrap'>
+			<motion.div className='flex flex-nowrap whitespace-nowrap text-9xl font-semibold' style={{ x }}>
 				{isMobileMenuActive ? (
 					<>
-						<p className='block mr-12 text-black'>{children}</p>
-						<p className='block mr-12 text-black'>{children}</p>
-						<p className='block mr-12 text-black'>{children}</p>
-						<p className='block mr-12 text-black'>{children}</p>
+						<p className='mr-12 block text-black'>{children}</p>
+						<p className='mr-12 block text-black'>{children}</p>
+						<p className='mr-12 block text-black'>{children}</p>
+						<p className='mr-12 block text-black'>{children}</p>
 					</>
 				) : (
 					<>
-						<p className='block mr-12 text-black'>{children}</p>
-						<p className='block mr-12 text-black'>{children}</p>
-						<p className='block mr-12 text-black'>{children}</p>
-						<p className='block mr-12 text-black'>{children}</p>
-						<p className='block mr-12 text-black'>{children}</p>
-						<p className='block mr-12 text-black'>{children}</p>
-						<p className='block mr-12 text-black'>{children}</p>
-						<p className='block mr-12 text-black'>{children}</p>
-						<p className='block mr-12 text-black'>{children}</p>
-						<p className='block mr-12 text-black'>{children}</p>
-						<p className='block mr-12 text-black'>{children}</p>
-						<p className='block mr-12 text-black'>{children}</p>
-						<p className='block mr-12 text-black'>{children}</p>
-						<p className='block mr-12 text-black'>{children}</p>
-						<p className='block mr-12 text-black'>{children}</p>
-						<p className='block mr-12 text-black'>{children}</p>
+						<p className='mr-12 block text-black'>{children}</p>
+						<p className='mr-12 block text-black'>{children}</p>
+						<p className='mr-12 block text-black'>{children}</p>
+						<p className='mr-12 block text-black'>{children}</p>
+						<p className='mr-12 block text-black'>{children}</p>
+						<p className='mr-12 block text-black'>{children}</p>
+						<p className='mr-12 block text-black'>{children}</p>
+						<p className='mr-12 block text-black'>{children}</p>
+						<p className='mr-12 block text-black'>{children}</p>
+						<p className='mr-12 block text-black'>{children}</p>
+						<p className='mr-12 block text-black'>{children}</p>
+						<p className='mr-12 block text-black'>{children}</p>
+						<p className='mr-12 block text-black'>{children}</p>
+						<p className='mr-12 block text-black'>{children}</p>
+						<p className='mr-12 block text-black'>{children}</p>
+						<p className='mr-12 block text-black'>{children}</p>
 					</>
 				)}
 			</motion.div>
@@ -121,7 +121,7 @@ export default function LiveTicker() {
 	const { language } = useLanguage()
 	return (
 		<>
-			<div className='z-[1] relative flex justify-center items-center bg-mint w-full h-[4.8vh] min-[1921px]:h-[3.3vh] -rotate-3 scale-110'>
+			<div className='relative z-[1] flex h-[4.8vh] w-full -rotate-3 scale-110 items-center justify-center bg-mint min-[1921px]:h-[3.3vh]'>
 				<ParallaxText baseVelocity={-2}>
 					<Link to={'/projects'} className='text-black'>
 						<span className='text-[--purple]'>&lt;</span>

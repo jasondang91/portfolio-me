@@ -1,13 +1,5 @@
-
 const Blogs = () => {
+	return <div>Loading...</div>
+}
 
-  return (
-    <div>
-      Loading...
-    </div>
-  );
-};
-
-export default Blogs;
-
-
+export default Blogs

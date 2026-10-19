@@ -41,8 +41,9 @@ const SkillSection: React.FC<SkillSectionProps> = ({ skillsData, theme }) => {
 
 	return (
 		<article
-			className={`relative z-10 grid h-auto grid-cols-4 gap-5 md:gap-10 rounded-2xl p-8 pt-32 max-lg:w-full max-lg:grid-cols-3 max-lg:p-8 max-lg:pt-32 ${theme === 'dark' ? 'dark-mode-shadow' : 'dark-shadow'
-				}`}
+			className={`relative z-10 grid h-auto grid-cols-4 gap-5 rounded-2xl p-8 pt-32 max-lg:w-full max-lg:grid-cols-3 max-lg:p-8 max-lg:pt-32 md:gap-10 ${
+				theme === 'dark' ? 'dark-mode-shadow' : 'dark-shadow'
+			}`}
 			style={{
 				background: 'rgba(26, 34, 56, 0.40)',
 				backdropFilter: 'blur(80px)',
@@ -52,7 +53,7 @@ const SkillSection: React.FC<SkillSectionProps> = ({ skillsData, theme }) => {
 			}}
 		>
 			<div className={`absolute left-1/2 top-10 -translate-x-1/2 transform rounded-t-xl px-4  py-2 `}>
-				<p className='font-black text-4xl'>
+				<p className='text-4xl font-black'>
 					<span className='text-[--purple]'>&lt;</span>
 					{skillsData[0].skillsTitle}
 					<span className='text-[--purple]'>/&gt;</span>
@@ -61,8 +62,9 @@ const SkillSection: React.FC<SkillSectionProps> = ({ skillsData, theme }) => {
 			{skillsData[0].skills.map((skill, index) => (
 				<div
 					key={index}
-					className={`skill-item flex cursor-pointer flex-col gap-6 rounded-2xl border-[0.25rem] border-solid p-4 md:p-8 text-center max-lg:items-center ${theme === 'dark' ? 'bg-[--darkblue]' : 'bg-[--icewhite]'
-						}`}
+					className={`skill-item flex cursor-pointer flex-col gap-6 rounded-2xl border-[0.25rem] border-solid p-4 text-center max-lg:items-center md:p-8 ${
+						theme === 'dark' ? 'bg-[--darkblue]' : 'bg-[--icewhite]'
+					}`}
 					data-tooltip-id='my-tooltip'
 					data-tooltip-content={skill.title}
 					style={{
@@ -82,8 +84,8 @@ const SkillSection: React.FC<SkillSectionProps> = ({ skillsData, theme }) => {
 						document.documentElement.style.setProperty('--box-shadow-color', 'inherit')
 					}}
 				>
-					<img src={getSkillIconSrc(theme, skill)} alt={`${skill.icon}-icon`} className='w-full h-[6rem]' />
-					<h3 className='min-[1024px]:hidden max-lg:text-[1.3rem]'>{skill.title}</h3>
+					<img src={getSkillIconSrc(theme, skill)} alt={`${skill.icon}-icon`} className='h-[6rem] w-full' />
+					<h3 className='max-lg:text-[1.3rem] min-[1024px]:hidden'>{skill.title}</h3>
 				</div>
 			))}
 		</article>

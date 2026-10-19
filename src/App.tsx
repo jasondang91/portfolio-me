@@ -11,7 +11,6 @@ import { Fragment, Suspense, useEffect, useState } from 'react'
 import Loader from './components/Loader'
 
 function App() {
-
 	const [loading, setLoading] = useState<boolean>(true)
 
 	useEffect(() => {
@@ -24,7 +23,7 @@ function App() {
 	}, [])
 
 	if (loading) {
-		return <Loader />;
+		return <Loader />
 	}
 
 	return (
@@ -35,8 +34,18 @@ function App() {
 						<ActiveSectionContextProvider>
 							<Routes>
 								<Route path='/' element={<Home />} />
-								<Route path='/blogs' element={<Suspense fallback={<div>Loading...</div>}><Blogs /></Suspense>} />
-								<Route path='/projects' element={<Projects scale="scale-[25]" opacity="opacity-50" />} />
+								<Route
+									path='/blogs'
+									element={
+										<Suspense fallback={<div>Loading...</div>}>
+											<Blogs />
+										</Suspense>
+									}
+								/>
+								<Route
+									path='/projects'
+									element={<Projects scale='scale-[25]' opacity='opacity-50' />}
+								/>
 								<Route path='/privacy' element={<Home />} />
 								<Route path='/thank-you' element={<ThankYou />} />
 								<Route path='*' element={<NotFound />} />

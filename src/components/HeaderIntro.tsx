@@ -14,16 +14,16 @@ const HeaderIntro: React.FC = () => {
 	const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext()
 
 	const handleButtonClick = (button: {
-		name: "Home" | "Skills" | "Projects" | "About me" | "Contact" | "Resume";
-		label: { de: string; en: string; vi: string };
-		icon: IconType;
-		color: string;
-		download?: boolean;
-		fileUrl?: string;
+		name: 'Home' | 'Skills' | 'Projects' | 'About me' | 'Contact' | 'Resume'
+		label: { de: string; en: string; vi: string }
+		icon: IconType
+		color: string
+		download?: boolean
+		fileUrl?: string
 	}) => {
 		if (button.download) {
 			window.open(button.fileUrl, '_blank')
-		} else if (button.name !== "Resume") {
+		} else if (button.name !== 'Resume') {
 			setActiveSection(button.name)
 			setTimeOfLastClick(Date.now())
 		}
@@ -31,7 +31,7 @@ const HeaderIntro: React.FC = () => {
 
 	return (
 		<section
-			className='flex flex-col justify-center items-center gap-10 max-lg:gap-6 h-full max-lg:h-full hero'
+			className='hero flex h-full flex-col items-center justify-center gap-10 max-lg:h-full max-lg:gap-6'
 			ref={ref}
 			id='home'
 		>
@@ -40,18 +40,18 @@ const HeaderIntro: React.FC = () => {
 			<img
 				src={headerIntroData.profilepicture}
 				alt={headerIntroData.profilepicture}
-				className='shadow-2xl drop-shadow-2xl rounded-full w-1/6 max-lg:w-3/4 avatar-img'
+				className='avatar-img w-1/6 rounded-full shadow-2xl drop-shadow-2xl max-lg:w-3/4'
 			/>
-			<h1 className='mt-12 md:mt-0 text-4xl md:text-6xl'>
+			<h1 className='mt-12 text-4xl md:mt-0 md:text-6xl'>
 				{language === 'DE'
 					? headerIntroData.title.de
 					: language === 'EN'
 						? headerIntroData.title.en
 						: headerIntroData.title.vi}
-				<span className='ms-2 text-4xl md:text-7xl wave'>&#128075;&#127997;</span>
+				<span className='wave ms-2 text-4xl md:text-7xl'>&#128075;&#127997;</span>
 			</h1>
 			<h2 className='text-4xl md:text-6xl'>{headerIntroData.subtitle}</h2>
-			<p className='max-lg:hidden w-1/2 text-center'>
+			<p className='w-1/2 text-center max-lg:hidden'>
 				{language === 'DE'
 					? headerIntroData.description.de
 					: language === 'EN'
@@ -59,7 +59,7 @@ const HeaderIntro: React.FC = () => {
 						: headerIntroData.description.vi}
 			</p>
 
-			<div className='flex max-lg:flex-col justify-center items-center max-lg:items-center gap-10 md:mr-8 mb-12 button-container'>
+			<div className='button-container mb-12 flex items-center justify-center gap-10 max-lg:flex-col max-lg:items-center md:mr-8'>
 				{headerIntroData.buttons.map((button, index) => (
 					<Button
 						key={index}
@@ -74,7 +74,7 @@ const HeaderIntro: React.FC = () => {
 					/>
 				))}
 			</div>
-			<div className='flex gap-6 animate-bounce scroll-down-container'>
+			<div className='scroll-down-container flex animate-bounce gap-6'>
 				<BsMouse className='text-[2.6rem]' />
 			</div>
 		</section>

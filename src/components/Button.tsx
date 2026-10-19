@@ -34,33 +34,33 @@ const Button: React.FC<ButtonProps> = ({
 	const inner = (displayLabel?: string) => (
 		<>
 			{/* Shimmer sweep */}
-			<div className='absolute inset-0 bg-gradient-to-r from-transparent via-purple/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none' />
+			<div className='pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-purple/30 to-transparent transition-transform duration-1000 ease-out group-hover:translate-x-full' />
 			{/* Glow overlay */}
-			<div className='absolute inset-0 rounded-2xl bg-gradient-to-r from-purple/10 via-purple/20 to-purple/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none' />
+			<div className='pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-r from-purple/10 via-purple/20 to-purple/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100' />
 
 			<div className='relative z-10 flex items-center gap-2'>
 				{/* Icon box */}
 				{IconSVGComponent && (
-					<div className='p-2 rounded-lg bg-gradient-to-br from-purple/30 to-purple/10 backdrop-blur-sm group-hover:from-purple/50 group-hover:to-purple/20 transition-all duration-300 flex-shrink-0'>
-						<IconSVGComponent className='w-7 h-7 text-purple transition-all duration-300 group-hover:scale-110 drop-shadow-lg' />
+					<div className='flex-shrink-0 rounded-lg bg-gradient-to-br from-purple/30 to-purple/10 p-2 backdrop-blur-sm transition-all duration-300 group-hover:from-purple/50 group-hover:to-purple/20'>
+						<IconSVGComponent className='h-7 w-7 text-purple drop-shadow-lg transition-all duration-300 group-hover:scale-110' />
 					</div>
 				)}
 
 				{/* Label + subtitle */}
 				<div className='flex-1'>
-					<p className='text-purple font-bold text-[1.5rem] group-hover:brightness-125 transition-all duration-300 drop-shadow-sm leading-none mb-1'>
+					<p className='mb-1 text-[1.5rem] font-bold leading-none text-purple drop-shadow-sm transition-all duration-300 group-hover:brightness-125'>
 						{displayLabel}
 					</p>
 					{subtitle && (
-						<p className='text-purple/60 text-lg group-hover:text-purple/80 transition-colors duration-300'>
+						<p className='text-lg text-purple/60 transition-colors duration-300 group-hover:text-purple/80'>
 							{subtitle}
 						</p>
 					)}
 				</div>
 
 				{/* Arrow */}
-				<div className='opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0'>
-					<svg viewBox='0 0 24 24' stroke='currentColor' fill='none' className='w-6 h-6 text-purple'>
+				<div className='flex-shrink-0 opacity-40 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100'>
+					<svg viewBox='0 0 24 24' stroke='currentColor' fill='none' className='h-6 w-6 text-purple'>
 						<path d='M9 5l7 7-7 7' strokeWidth='2' strokeLinejoin='round' strokeLinecap='round' />
 					</svg>
 				</div>
@@ -71,12 +71,7 @@ const Button: React.FC<ButtonProps> = ({
 	// Submit / standalone button (replaces old elementType='input' path too)
 	if (elementType === 'input' || (type === 'submit' && !link)) {
 		return (
-			<button
-				type={type ?? 'submit'}
-				disabled={disabled}
-				onClick={onClick}
-				className={baseClass}
-			>
+			<button type={type ?? 'submit'} disabled={disabled} onClick={onClick} className={baseClass}>
 				{inner(value ?? label)}
 			</button>
 		)
@@ -85,12 +80,7 @@ const Button: React.FC<ButtonProps> = ({
 	// Link button
 	return (
 		<Link to={link || ''} className='no-underline'>
-			<button
-				type={type ?? 'button'}
-				disabled={disabled}
-				onClick={onClick}
-				className={baseClass}
-			>
+			<button type={type ?? 'button'} disabled={disabled} onClick={onClick} className={baseClass}>
 				{inner(label)}
 			</button>
 		</Link>

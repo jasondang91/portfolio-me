@@ -58,11 +58,11 @@ const NavBar: React.FC = () => {
 			: 'opacity-20 transition-all duration-700'
 
 		const leftArrow = isLinkActive && (
-			<span className='max-lg:hidden top-0 -left-5 absolute text-[--purple]'>&lt;</span>
+			<span className='absolute -left-5 top-0 text-[--purple] max-lg:hidden'>&lt;</span>
 		)
 
 		const rightArrow = isLinkActive && (
-			<span className='max-lg:hidden top-0 -right-10 absolute text-[--purple]'>/&gt;</span>
+			<span className='absolute -right-10 top-0 text-[--purple] max-lg:hidden'>/&gt;</span>
 		)
 
 		return (
@@ -70,7 +70,7 @@ const NavBar: React.FC = () => {
 				to={link}
 				onMouseEnter={() => setIsHovered(true)}
 				onMouseLeave={() => setIsHovered(false)}
-				className={`relative ${linkClasses}`}
+				className={`relative uppercase ${linkClasses}`}
 				aria-aria-current={link}
 			>
 				<span>
@@ -87,7 +87,7 @@ const NavBar: React.FC = () => {
 			<ScrollToAnchor />
 			{!isMobileMenuActive && (
 				<nav
-					className={`top-0 flex flex-row items-center justify-center gap-24 p-5 font-semibold max-lg:hidden ${isSticky && !isMobileMenuActive
+					className={`top-0 flex flex-row items-center justify-center gap-24 p-5 font-normal max-lg:hidden ${isSticky && !isMobileMenuActive
 						? `sticky top-10 z-50 ml-auto mr-auto  w-max  rounded-full border border-white border-opacity-40 bg-opacity-80 px-16 py-5 shadow-lg shadow-black/[0.05]  backdrop-blur-[0.5rem] transition-all duration-100 ease-in-out ${theme === 'dark' ? 'bg-[rgba(26, 34, 56, 0.40)]' : 'bg-white'
 						}`
 						: ''
@@ -98,7 +98,7 @@ const NavBar: React.FC = () => {
 						<CustomNavLink key={index} link={link.hash} linkEn={link.en}>
 							{link.en === activeSection ? (
 								<div>
-									<span className='top-0 -left-5 absolute text-[--purple]'>&lt;</span>
+									<span className='absolute -left-5 top-0 text-[--purple]'>&lt;</span>
 									{language === 'DE' ? link.de : language === 'EN' ? link.en : link.vi}
 									{/* {link.de.toLocaleUpperCase()} */}
 								</div>
@@ -121,7 +121,7 @@ const NavBar: React.FC = () => {
 			)}
 			{isMobileMenuActive && (
 				<nav
-					className={` fixed bottom-0 left-0 z-50 w-[100vw] flex-row items-center justify-between rounded-t-3xl bg-darkblue  bg-opacity-100 py-6 px-10 text-center shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] transition-all duration-100 ease-in-out max-lg:flex ${theme === 'dark' ? 'bg-darkblue' : 'bg-white'
+					className={` fixed bottom-0 left-0 z-50 w-[100vw] flex-row items-center justify-between rounded-t-3xl bg-darkblue  bg-opacity-100 px-10 py-6 text-center shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] transition-all duration-100 ease-in-out max-lg:flex ${theme === 'dark' ? 'bg-darkblue' : 'bg-white'
 						}`}
 				>
 					{navLinks.map((link, mobileIndex) => (

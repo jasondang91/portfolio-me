@@ -28,12 +28,13 @@ import dearbornmockup from '../../assets/img/1100northdearborn.jpg'
 import polyconsmockup from '../../assets/img/ploycons.jpg'
 import heritagesalumimockup from '../../assets/img/heritagesalumi.jpg'
 import lbrmockup from '../../assets/img/lbr.jpg'
-import allstatemovemockup from '../../assets/img/allstatemover.jpg'
+import allstatemovemockup from '../../assets/img/allstatemoversinc.jpg'
 import elstonmockup from '../../assets/img/elstonmaterials.jpg'
 import lakesidemockup from '../../assets/img/lakeside.jpg'
 import marinabeachmockup from '../../assets/img/marinabeachmotel.jpg'
-import sculptedmockup from '../../assets/img/sculptedbylagree.jpg'
-import przmockup from '../../assets/img/prz-new.jpg'
+import sculptedmockup from '../../assets/img/sculptedbylagree1.jpg'
+import przmockup from '../../assets/img/purezawood1.jpg'
+import bachhoamyducmockup from '../../assets/img/bachhoamy.com.jpeg'
 import jwticon from '../../assets/icons/jwticon.svg'
 import wordpressicon from '../../assets/icons/wordpressicon.svg'
 import shopifyicon from '../../assets/icons/shopifyicon.svg'
@@ -41,6 +42,9 @@ import strapiicon from '../../assets/icons/strapiicon.svg'
 import jqueryicon from '../../assets/icons/jqueryicon.svg'
 import boBeDoMockup from '../../assets/img/bo-be-do.jpg'
 import identitybodypiercingMockup from '../../assets/img/identitybodypiercing.jpg'
+import bestWesternMockup from '../../assets/img/bestwestern.jpg'
+import engleangelovMockup from '../../assets/img/engleangelov.jpg'
+import abTechMockup from '../../assets/img/abtech.jpg'
 import directLakesideMockup from '../../assets/img/direct-lakeside.jpg'
 import newParadiseBakeryMockup from '../../assets/img/bakery.jpg'
 import zingmockup from '../../assets/img/zing.jpg'
@@ -264,6 +268,36 @@ export const projectsData = [
 		},
 	},
 	{
+		title: 'Bach Hoa My',
+		description:
+			'Bach Khoa Viet Company (Polycons) wurde 2007 gegründet und ist seit 15 Jahren ein junges Unternehmen in der Baubranche. Durch die Teilnahme an Projekten vieler großer in- und ausländischer Wirtschaftsgruppen hat sich das Unternehmen schrittweise weiterentwickelt und sich auf dem heimischen Baumarkt einen Namen gemacht.',
+		description_EN:
+			'Established in 2007, after 15 years of operation, Bach Khoa Viet Company (Polycons) from a young enterprise in the construction industry has gradually developed and shaped its name in the domestic construction market through participating in projects of many large domestic and foreign economic groups.',
+		description_VI:
+			'Thành lập từ năm 2007, trải qua 15 năm hoạt động Công ty Bách Khoa Việt (Polycons) từ một doanh nghiệp non trẻ trong ngành xây dựng đã từng bước phát triển và định hình được tên tuổi trên thị trường xây dựng trong nước thông qua việc đã và đang tham gia các dự án của nhiều tập đoàn kinh tế lớn trong và ngoài nước.',
+		technologies: [
+			{ name: 'Html', icon: htmlicon },
+			{ name: 'CSS', icon: cssicon },
+			{ name: 'Tailwind', icon: tailwindcssicon },
+			{ name: 'JavaScript', icon: javascripticon },
+			{ name: 'Jquery', icon: jqueryicon },
+			{ name: 'PHP', icon: phpicon },
+			{ name: 'MySQL', icon: mysqlicon },
+			{ name: 'Figma', icon: figmaicon },
+		],
+		image: bachhoamyducmockup,
+		deploymenturl: '#',
+		githuburl: '##',
+		githubicon: FiGithub,
+		deploymenticon: FiLink,
+		colors: {
+			main: 'main-btn',
+			second: 'secondary-btn',
+			icon: 'white',
+			projectcolor: '#E3964A',
+		},
+	},
+	{
 		title: 'Polycons',
 		description:
 			'Bach Khoa Viet Company (Polycons) wurde 2007 gegründet und ist seit 15 Jahren ein junges Unternehmen in der Baubranche. Durch die Teilnahme an Projekten vieler großer in- und ausländischer Wirtschaftsgruppen hat sich das Unternehmen schrittweise weiterentwickelt und sich auf dem heimischen Baumarkt einen Namen gemacht.',
@@ -462,6 +496,96 @@ export const projectsData = [
 			{ name: 'Adobe Photoshop', icon: photoshopicon },
 		],
 		image: elstonmockup,
+		deploymenturl: '#',
+		githuburl: '##',
+		githubicon: FiGithub,
+		deploymenticon: FiLink,
+		colors: {
+			main: 'main-btn',
+			second: 'secondary-btn',
+			icon: 'white',
+			projectcolor: '#E3964A',
+		},
+	},
+	{
+		title: 'Best Western',
+		description:
+			'Elston Material ist eine kleine E-Commerce-Website mit Sitz in Chicago, die auf den Verkauf und die Lieferung von Baumaterialien spezialisiert ist.',
+		description_EN:
+			'Elston Material is a small ecommerce website specializing in selling and supplying construction materials located in Chicago.',
+		description_VI:
+			'Elston Material là website thương mại nhỏ chuyên bán và cung cấp vật liệu xây dựng toạ lạc tại Chicago.',
+		technologies: [
+			{ name: 'Html', icon: htmlicon },
+			{ name: 'CSS', icon: cssicon },
+			{ name: 'JavaScript', icon: javascripticon },
+			{ name: 'Jquery', icon: jqueryicon },
+			{ name: 'Wordpress', icon: wordpressicon },
+			{ name: 'PHP', icon: phpicon },
+			{ name: 'MySQL', icon: mysqlicon },
+			{ name: 'Adobe Photoshop', icon: photoshopicon },
+		],
+		image: bestWesternMockup,
+		deploymenturl: '#',
+		githuburl: '##',
+		githubicon: FiGithub,
+		deploymenticon: FiLink,
+		colors: {
+			main: 'main-btn',
+			second: 'secondary-btn',
+			icon: 'white',
+			projectcolor: '#E3964A',
+		},
+	},
+	{
+		title: 'Engleangelov',
+		description:
+			'Elston Material ist eine kleine E-Commerce-Website mit Sitz in Chicago, die auf den Verkauf und die Lieferung von Baumaterialien spezialisiert ist.',
+		description_EN:
+			'Elston Material is a small ecommerce website specializing in selling and supplying construction materials located in Chicago.',
+		description_VI:
+			'Elston Material là website thương mại nhỏ chuyên bán và cung cấp vật liệu xây dựng toạ lạc tại Chicago.',
+		technologies: [
+			{ name: 'Html', icon: htmlicon },
+			{ name: 'CSS', icon: cssicon },
+			{ name: 'JavaScript', icon: javascripticon },
+			{ name: 'Jquery', icon: jqueryicon },
+			{ name: 'Wordpress', icon: wordpressicon },
+			{ name: 'PHP', icon: phpicon },
+			{ name: 'MySQL', icon: mysqlicon },
+			{ name: 'Adobe Photoshop', icon: photoshopicon },
+		],
+		image: engleangelovMockup,
+		deploymenturl: '#',
+		githuburl: '##',
+		githubicon: FiGithub,
+		deploymenticon: FiLink,
+		colors: {
+			main: 'main-btn',
+			second: 'secondary-btn',
+			icon: 'white',
+			projectcolor: '#E3964A',
+		},
+	},
+	{
+		title: 'Abtech',
+		description:
+			'Elston Material ist eine kleine E-Commerce-Website mit Sitz in Chicago, die auf den Verkauf und die Lieferung von Baumaterialien spezialisiert ist.',
+		description_EN:
+			'Elston Material is a small ecommerce website specializing in selling and supplying construction materials located in Chicago.',
+		description_VI:
+			'Elston Material là website thương mại nhỏ chuyên bán và cung cấp vật liệu xây dựng toạ lạc tại Chicago.',
+		technologies: [
+			{ name: 'Html', icon: htmlicon },
+			{ name: 'CSS', icon: cssicon },
+			{ name: 'JavaScript', icon: javascripticon },
+			{ name: 'Jquery', icon: jqueryicon },
+			{ name: 'Wordpress', icon: wordpressicon },
+			{ name: 'PHP', icon: phpicon },
+			{ name: 'MySQL', icon: mysqlicon },
+			{ name: 'Adobe Photoshop', icon: photoshopicon },
+		],
+		image: abTechMockup,
 		deploymenturl: '#',
 		githuburl: '##',
 		githubicon: FiGithub,
@@ -935,7 +1059,7 @@ export const contactData = {
 				vi: 'Vui lòng điền địa chỉ email',
 			},
 			pattern: '[@]{4}',
-		}
+		},
 	],
 	textarea: {
 		placeholder: {

@@ -10,7 +10,7 @@ import { Tooltip as ReactTooltip } from 'react-tooltip'
 import { useSectionInView } from '../assets/lib/hooks'
 import { useLanguage } from '../context/language-context'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { BsBoxArrowUpRight } from "react-icons/bs";
+import { BsBoxArrowUpRight } from 'react-icons/bs'
 import 'react-toastify/dist/ReactToastify.css'
 import 'swiper/css'
 import 'swiper/css/effect-cards'
@@ -37,12 +37,12 @@ const ProjectSlider: React.FC = () => {
 	return (
 		<React.Fragment>
 			<section
-				className='relative flex flex-col gap-2 w-full h-100% overflow-x-clip skill-banner'
+				className='h-100% skill-banner relative flex w-full flex-col gap-2 overflow-x-clip'
 				id='projects'
 				ref={ref}
 			>
 				<ToastContainer
-					className='block p-3 w-max text-3xl'
+					className='block w-max p-3 text-3xl'
 					position='bottom-center'
 					autoClose={5000}
 					hideProgressBar={false}
@@ -55,7 +55,7 @@ const ProjectSlider: React.FC = () => {
 					theme='light'
 				/>
 				<div
-					className='flex justify-center items-center bg-[--darkblue] max-lg:-mr-44 max-lg:-ml-44 pt-32 max-lg:pt-16 pb-32 max-lg:pb-16 -rotate-3 scale-110 max-lg:scale-100 quote-outer-container'
+					className='quote-outer-container flex -rotate-3 scale-110 items-center justify-center bg-[--darkblue] pb-32 pt-32 max-lg:-ml-44 max-lg:-mr-44 max-lg:scale-100 max-lg:pb-16 max-lg:pt-16'
 					style={{
 						backgroundImage: `url(${bannerBg})`,
 						backgroundPosition: 'center',
@@ -63,7 +63,7 @@ const ProjectSlider: React.FC = () => {
 						backgroundRepeat: 'no-repeat',
 					}}
 				>
-					<div className='flex flex-col justify-between items-center gap-6 mb-24 max-lg:w-[100vw] text-center rotate-3 title-container'>
+					<div className='title-container mb-24 flex rotate-3 flex-col items-center justify-between gap-6 text-center max-lg:w-[100vw]'>
 						<motion.div
 							ref={animationReference}
 							style={{
@@ -72,12 +72,12 @@ const ProjectSlider: React.FC = () => {
 								textAlign: 'center',
 							}}
 						>
-							<p className='mt-16 mb-6 text-[--white]'>
+							<p className='mb-6 mt-16 text-[--white]'>
 								<span className='text-[--purple]'>&lt;</span>
 								{language === 'DE' ? 'Projekte' : language === 'EN' ? 'Projects' : 'Dự Án'}
 								<span className='text-[--purple]'>/&gt;</span>
 							</p>
-							<h2 className='mb-4 text-[--white] text-5xl md:text-6xl'>
+							<h2 className='mb-4 text-5xl text-[--white] md:text-6xl'>
 								{language === 'DE'
 									? 'Meine Projekte'
 									: language === 'EN'
@@ -85,7 +85,10 @@ const ProjectSlider: React.FC = () => {
 										: 'Một Vài Dự Án Của Tôi'}
 							</h2>
 
-							<a href='/projects' className='flex justify-center items-center gap-x-2 mb-16 font-[200] text-[--white] text-[1.4rem] text-mint'>
+							<a
+								href='/projects'
+								className='mb-16 flex items-center justify-center gap-x-2 text-[1.4rem] font-[200] text-[--white] text-mint'
+							>
 								{language === 'DE'
 									? 'Mehr von meinen Projekten ansehen'
 									: language === 'EN'
@@ -98,7 +101,7 @@ const ProjectSlider: React.FC = () => {
 							effect={'cards'}
 							grabCursor={true}
 							modules={[EffectCards, Autoplay, Pagination]}
-							className='max-lg:hidden min-[1921px]:px-20 w-[52vw]'
+							className='w-[45vw] max-lg:hidden min-[1921px]:px-20'
 							loop={true}
 							autoplay={{
 								delay: 4000,
@@ -112,19 +115,20 @@ const ProjectSlider: React.FC = () => {
 							{projectsData.slice(0, 7).map((project, index: number) => (
 								<SwiperSlide
 									key={index}
-									className='max-lg:hidden flex flex-row justify-between p-20 rounded-2xl text-[--white] text-left quote-outer-container'
+									className='quote-outer-container flex flex-row justify-between rounded-2xl p-20 text-left text-[--white] max-lg:hidden'
 									style={{
 										background: 'rgba(26, 34, 56, 0.40)',
 										backdropFilter: 'blur(25px)',
 										WebkitBackdropFilter: 'blur(25px)',
 										border: '1px solid rgba(139, 92, 246, 0.30)',
-										boxShadow: '0 8px 32px rgba(26, 34, 56,0.35), inset 0 1px 0 rgba(255,255,255,0.08)',
+										boxShadow:
+											'0 8px 32px rgba(26, 34, 56,0.35), inset 0 1px 0 rgba(255,255,255,0.08)',
 									}}
 								>
-									<div className='flex flex-col justify-between gap-12 w-[55%]'>
+									<div className='flex w-[55%] flex-col justify-between gap-12'>
 										<h2 className=''>{project.title}</h2>
 
-										<p className='text-icewhite text-[1.2rem] md:text-[1.5rem] leading-relaxed'>
+										<p className='text-[1.2rem] leading-relaxed text-icewhite md:text-[1.5rem]'>
 											{language === 'DE'
 												? project.description
 												: language === 'EN'
@@ -139,20 +143,20 @@ const ProjectSlider: React.FC = () => {
 														? 'Technologies'
 														: 'Công Nghệ'}
 											</h3>
-											<div className='gap-6 grid grid-cols-6 mt-8'>
+											<div className='mt-8 grid grid-cols-6 gap-6'>
 												{project.technologies.map((technology, innerIndex: number) => (
 													<img
 														key={innerIndex}
 														src={technology.icon}
 														alt={`${project.title}-icon`}
-														className='w-[50%] h-[4rem]'
+														className='h-[4rem] w-[50%]'
 														data-tooltip-id='my-tooltip'
 														data-tooltip-content={technology.name}
 													/>
 												))}
 											</div>
 										</div>
-										<div className='flex gap-6 project-buttons'>
+										<div className='project-buttons flex gap-6'>
 											<Button
 												label='Live Demo'
 												link={project.deploymenturl}
@@ -164,11 +168,11 @@ const ProjectSlider: React.FC = () => {
 										</div>
 									</div>
 
-									<div className='right-content relative shadow-2xl rounded-xl w-[41%] h-[40rem] overflow-hidden transition-all duration-200'>
+									<div className='right-content relative h-[40rem] w-[41%] overflow-hidden rounded-xl shadow-2xl transition-all duration-200'>
 										<img
 											src={project.image}
 											alt={`${project.title}-project-mockup`}
-											className={`h-auto w-full transform opacity-100 transition-all duration-[6000ms] hover:translate-y-[-50%] 
+											className={`h-auto w-full transform object-cover opacity-100 transition-all duration-[6000ms] hover:translate-y-[-50%]
                       `}
 										/>
 									</div>
@@ -178,7 +182,7 @@ const ProjectSlider: React.FC = () => {
 						{projectsData.slice(0, 5).map((project, index: number) => (
 							<article
 								key={index}
-								className='min-[1024px]:hidden flex flex-col gap-10 mb-10 p-8 rounded-xl w-[80%] max-lg:w-[90%] h-full'
+								className='mb-10 flex h-full w-[80%] flex-col gap-10 rounded-xl p-8 max-lg:w-[90%] min-[1024px]:hidden'
 								style={{
 									background: 'rgba(255, 255, 255, 0.06)',
 									backdropFilter: 'blur(24px)',
@@ -191,9 +195,9 @@ const ProjectSlider: React.FC = () => {
 								<img
 									src={project.image}
 									alt={project.image}
-									className='rounded-3xl w-full h-[35vh] object-cover object-top'
+									className='h-[35vh] w-full rounded-3xl object-cover object-top'
 								/>
-								<div className='flex max-lg:flex-col gap-4 md:gap-10 project-buttons'>
+								<div className='project-buttons flex gap-4 max-lg:flex-col md:gap-10'>
 									<Button
 										label='Live Demo'
 										link={project.deploymenturl}
@@ -209,7 +213,7 @@ const ProjectSlider: React.FC = () => {
 										iconcolor={project.colors.icon}
 									/>
 								</div>
-								<p className='text-white text-3xl md:text-4xl'>
+								<p className='text-3xl text-white md:text-4xl'>
 									{language === 'DE'
 										? project.description
 										: language === 'EN'
@@ -218,20 +222,20 @@ const ProjectSlider: React.FC = () => {
 								</p>
 
 								<div className='technologies'>
-									<h3 className='text-white text-3xl'>
+									<h3 className='text-3xl text-white'>
 										{language === 'DE'
 											? 'Technologien'
 											: language === 'EN'
 												? 'Technologies'
 												: 'Công Nghệ'}
 									</h3>
-									<div className='justify-center items-center gap-3 grid grid-cols-5 p-2'>
+									<div className='grid grid-cols-5 items-center justify-center gap-3 p-2'>
 										{project.technologies.map((technology, innerIndex: number) => (
 											<img
 												key={innerIndex}
 												src={technology.icon}
 												alt={`${project.title}-icon`}
-												className='w-[50%] h-[5rem] object-contain'
+												className='h-[5rem] w-[50%] object-contain'
 												data-tooltip-id='my-tooltip'
 												data-tooltip-content={technology.name}
 											/>
@@ -252,7 +256,7 @@ const ProjectSlider: React.FC = () => {
 					backgroundColor: 'var(--purple)',
 				}}
 			/>
-		</React.Fragment >
+		</React.Fragment>
 	)
 }
 

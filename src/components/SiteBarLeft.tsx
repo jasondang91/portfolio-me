@@ -16,17 +16,17 @@ const SiteBarLeft: React.FC = () => {
 
 	return (
 		<div
-			className='top-0 left-0 absolute flex flex-col justify-center items-center -ml-2 max-lg:-ml-[1.5rem] max-lg:h-[10%]'
+			className='absolute left-0 top-0 -ml-2 flex flex-col items-center justify-center max-lg:-ml-[1.5rem] max-lg:h-[10%]'
 			id='home'
 		>
-			<div className='flex flex-col justify-center items-center'>
-				<div className='bg-[--lightblue] w-[0.25rem] h-[40vh]'></div>
+			<div className='flex flex-col items-center justify-center'>
+				<div className='h-[40vh] w-[0.25rem] bg-[--lightblue]'></div>
 			</div>
-			<div className='flex flex-col items-center gap-4 mt-4'>
+			<div className='mt-4 flex flex-col items-center gap-4'>
 				{sideBarLeftSocials.map((social: SocialLink, index: number) => (
 					<Link
 						to={social.link}
-						className='block mb-2 hover:scale-110'
+						className='mb-2 block hover:scale-110'
 						key={index}
 						target='_blank'
 						rel='noopener noreferrer'
@@ -42,7 +42,7 @@ const SiteBarLeft: React.FC = () => {
 				<div className='mt-10 -rotate-90'>
 					<Link
 						to={'#'}
-						className="drop-shadow-[0_0_8px_--lightblue] text-[--lightblue] hover:text-[--mint] animate-pulse"
+						className='animate-pulse text-[--lightblue] drop-shadow-[0_0_8px_--lightblue] hover:text-[--mint]'
 					>
 						{language === 'DE' ? 'Teilen' : language === 'EN' ? 'Sharing' : 'Chia sẻ'}
 					</Link>

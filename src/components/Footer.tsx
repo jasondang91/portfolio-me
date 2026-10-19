@@ -8,7 +8,6 @@ import { useTheme } from '../context/theme-context'
 
 import Popup from 'reactjs-popup'
 import { VscChromeClose } from 'react-icons/vsc'
-// const LazyServiceStatus = lazy(() => import('../components/ServiceStatus'))
 
 interface SocialLink {
 	link: string
@@ -23,12 +22,12 @@ const Footer: React.FC = () => {
 	const { theme } = useTheme()
 
 	return (
-		<footer className='z-[1] relative flex flex-col max-lg:flex-col justify-around items-center gap-4 bg-darkblue p-10 max-lg:pb-48'>
+		<footer className='relative z-[1] flex flex-col items-center justify-around gap-4 bg-darkblue p-10 max-lg:flex-col max-lg:pb-48'>
 			<div className='flex gap-8 pb-4'>
 				{FooterLinks.map((link, index) => (
 					<Popup
 						trigger={
-							<Link to='#' className='font-bold text-white hover:text-purple text-2xl'>
+							<Link to='#' className='text-2xl font-bold text-white hover:text-purple'>
 								{language === 'DE' ? link.de : language === 'EN' ? link.en : link.vn}
 							</Link>
 						}
@@ -43,7 +42,7 @@ const Footer: React.FC = () => {
 											}`}
 									>
 										<button
-											className='top-0 right-0 z-10 fixed bg-purple hover:bg-lightblue dark-shadow m-4 p-4 rounded-2xl text-white transition-all duration-500'
+											className='dark-shadow fixed right-0 top-0 z-10 m-4 rounded-2xl bg-purple p-4 text-white transition-all duration-500 hover:bg-lightblue'
 											onClick={() => {
 												close()
 											}}
@@ -58,11 +57,11 @@ const Footer: React.FC = () => {
 					</Popup>
 				))}
 			</div>
-			<div className='flex gap-10 socials'>
+			<div className='socials flex gap-10'>
 				{sideBarLeftSocials.map((social: SocialLink, index: number) => (
 					<Link
 						to={social.link}
-						className='block mb-2'
+						className='mb-2 block'
 						key={index}
 						target='_blank'
 						rel='noopener noreferrer'
@@ -79,9 +78,7 @@ const Footer: React.FC = () => {
 				))}
 			</div>
 			<div className='flex items-center justify-center p-3'>
-				<p className='text-white text-[1.4rem]'>
-					Developed with ❤️ by Jason Dang
-				</p>
+				<p className='text-[1.4rem] text-white'>Power by Jason Dang</p>
 			</div>
 		</footer>
 	)
