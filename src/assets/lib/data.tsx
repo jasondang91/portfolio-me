@@ -693,9 +693,9 @@ export const projectsData = [
 
 export const liveTickerData = {
 	content: {
-		de: 'Weitere Projekte',
-		en: 'More Projects',
-		vi: 'Xem Thêm Dự Án',
+		de: 'jasondangx91@gmail.com',
+		en: 'jasondangx91@gmail.com',
+		vi: 'jasondangx91@gmail.com',
 	},
 } as const
 

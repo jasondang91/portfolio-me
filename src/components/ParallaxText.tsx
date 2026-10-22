@@ -123,7 +123,7 @@ export default function LiveTicker() {
 		<>
 			<div className='relative z-[1] flex h-[4.8vh] w-full -rotate-3 scale-110 items-center justify-center bg-mint min-[1921px]:h-[3.3vh]'>
 				<ParallaxText baseVelocity={-2}>
-					<Link to={'/projects'} className='text-black'>
+					<Link to={'mailto:jasondangx91@gmail.com'} className='text-black'>
 						<span className='text-[--purple]'>&lt;</span>
 						{language === 'DE'
 							? liveTickerData.content.de

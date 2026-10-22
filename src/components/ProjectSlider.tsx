@@ -87,14 +87,18 @@ const ProjectSlider: React.FC = () => {
 
 							<a
 								href='/projects'
-								className='mb-16 flex items-center justify-center gap-x-2 text-[1.4rem] font-[200] text-[--white] text-mint'
+								className='group mb-16 inline-flex items-center justify-center gap-2 text-[1.4rem] font-[300] text-[--white] transition-all duration-300 hover:gap-3'
 							>
-								{language === 'DE'
-									? 'Mehr von meinen Projekten ansehen'
-									: language === 'EN'
-										? 'See more of my projects'
-										: 'Xem thêm những dự án của tôi'}
-								<BsBoxArrowUpRight />
+								<span className='relative'>
+									{language === 'DE'
+										? 'Mehr von meinen Projekten ansehen'
+										: language === 'EN'
+											? 'See more of my projects'
+											: 'Xem thêm những dự án của tôi'}
+									{/* Animated underline */}
+									<span className='absolute -bottom-0.5 left-0 h-px w-0 bg-[--mint] transition-all duration-300 group-hover:w-full' />
+								</span>
+								<BsBoxArrowUpRight className='text-[--mint] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5' />
 							</a>
 						</motion.div>
 						<Swiper
@@ -136,7 +140,7 @@ const ProjectSlider: React.FC = () => {
 													: project.description_VI}
 										</p>
 										<div className='technologies '>
-											<h3 className='text-[1.8rem] underline'>
+											<h3 className='text-[1.5rem] underline'>
 												{language === 'DE'
 													? 'Technologien'
 													: language === 'EN'

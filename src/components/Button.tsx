@@ -10,6 +10,7 @@ interface ButtonProps {
 	link?: string
 	iconcolor?: string
 	iconSVG?: React.FC<{ className: string }>
+	/** 'main-btn' → purple primary  |  'secondary-btn' → lightblue secondary  |  any other string is treated as primary */
 	buttoncolor?: string
 	buttonhovercolor?: string
 	type?: 'button' | 'submit' | 'reset'
@@ -27,40 +28,80 @@ const Button: React.FC<ButtonProps> = ({
 	type,
 	elementType,
 	disabled,
+	buttoncolor,
 	className,
 }) => {
-	const baseClass = `group relative py-2 px-6 rounded-2xl border-2 border-purple/30 bg-gradient-to-br from-purple/20 via-blackblue/60 to-transparent shadow-2xl hover:shadow-purple/30 hover:border-purple/60 hover:scale-[1.02] hover:-translate-y-1 active:scale-95 transition-all duration-500 ease-out cursor-pointer overflow-hidden text-left backdrop-blur-xl ${disabled ? 'opacity-60 cursor-not-allowed pointer-events-none' : ''} ${className ?? ''}`
+	// Resolve variant from buttoncolor prop
+	const isSecondary = buttoncolor === 'secondary-btn'
+
+	// Border + accent tokens driven by variant
+	const borderCls = isSecondary
+		? 'border-[--lightblue]/40 hover:border-[--lightblue]/80 hover:shadow-[--lightblue]/20'
+		: 'border-[--purple]/40 hover:border-[--purple]/80 hover:shadow-[--purple]/20'
+
+	const accentCls = isSecondary ? 'text-[--lightblue]' : 'text-[--purple]'
+	const shimmerCls = isSecondary ? 'via-[--lightblue]/20' : 'via-[--purple]/20'
+	const glowCls = isSecondary
+		? 'from-[--lightblue]/10 via-[--lightblue]/15 to-[--lightblue]/10'
+		: 'from-[--purple]/10 via-[--purple]/15 to-[--purple]/10'
+	const iconBgCls = isSecondary
+		? 'from-[--lightblue]/20 to-[--lightblue]/10 group-hover:from-[--lightblue]/40 group-hover:to-[--lightblue]/20'
+		: 'from-[--purple]/20 to-[--purple]/10 group-hover:from-[--purple]/40 group-hover:to-[--purple]/20'
+
+	const baseClass = [
+		'group relative py-3 px-7 rounded-xl',
+		'border-2 bg-transparent',
+		'shadow-lg hover:shadow-xl',
+		'hover:scale-[1.03] hover:-translate-y-0.5 active:scale-[0.97]',
+		'transition-all duration-300 ease-out',
+		'cursor-pointer overflow-hidden text-left backdrop-blur-sm',
+		borderCls,
+		disabled ? 'opacity-50 cursor-not-allowed pointer-events-none' : '',
+		className ?? '',
+	].join(' ')
 
 	const inner = (displayLabel?: string) => (
 		<>
 			{/* Shimmer sweep */}
-			<div className='pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-purple/30 to-transparent transition-transform duration-1000 ease-out group-hover:translate-x-full' />
-			{/* Glow overlay */}
-			<div className='pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-r from-purple/10 via-purple/20 to-purple/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100' />
+			<div
+				className={`pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent ${shimmerCls} to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full`}
+			/>
+			{/* Subtle glow fill */}
+			<div
+				className={`pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-br ${glowCls} opacity-0 transition-opacity duration-300 group-hover:opacity-100`}
+			/>
 
-			<div className='relative z-10 flex items-center gap-2'>
-				{/* Icon box */}
+			<div className='relative z-10 flex items-center gap-3'>
+				{/* Inline icon */}
 				{IconSVGComponent && (
-					<div className='flex-shrink-0 rounded-lg bg-gradient-to-br from-purple/30 to-purple/10 p-2 backdrop-blur-sm transition-all duration-300 group-hover:from-purple/50 group-hover:to-purple/20'>
-						<IconSVGComponent className='h-7 w-7 text-purple drop-shadow-lg transition-all duration-300 group-hover:scale-110' />
+					<div
+						className={`flex-shrink-0 rounded-lg bg-gradient-to-br p-2 transition-all duration-300 ${iconBgCls}`}
+					>
+						<IconSVGComponent
+							className={`h-6 w-6 transition-transform duration-300 group-hover:scale-110 ${accentCls}`}
+						/>
 					</div>
 				)}
 
-				{/* Label + subtitle */}
+				{/* Label + optional subtitle */}
 				<div className='flex-1'>
-					<p className='mb-1 text-[1.5rem] font-bold leading-none text-purple drop-shadow-sm transition-all duration-300 group-hover:brightness-125'>
+					<p
+						className={`text-[1.5rem] font-semibold leading-tight tracking-wide transition-all duration-300 group-hover:brightness-125 ${accentCls}`}
+					>
 						{displayLabel}
 					</p>
 					{subtitle && (
-						<p className='text-lg text-purple/60 transition-colors duration-300 group-hover:text-purple/80'>
+						<p className={`mt-0.5 text-[1.2rem] opacity-60 transition-opacity duration-300 group-hover:opacity-80 ${accentCls}`}>
 							{subtitle}
 						</p>
 					)}
 				</div>
 
-				{/* Arrow */}
-				<div className='flex-shrink-0 opacity-40 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100'>
-					<svg viewBox='0 0 24 24' stroke='currentColor' fill='none' className='h-6 w-6 text-purple'>
+				{/* Chevron — subtle, slides right on hover */}
+				<div
+					className={`flex-shrink-0 opacity-30 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-80 ${accentCls}`}
+				>
+					<svg viewBox='0 0 24 24' stroke='currentColor' fill='none' className='h-5 w-5'>
 						<path d='M9 5l7 7-7 7' strokeWidth='2' strokeLinejoin='round' strokeLinecap='round' />
 					</svg>
 				</div>
@@ -68,7 +109,7 @@ const Button: React.FC<ButtonProps> = ({
 		</>
 	)
 
-	// Submit / standalone button (replaces old elementType='input' path too)
+	// Submit / standalone button
 	if (elementType === 'input' || (type === 'submit' && !link)) {
 		return (
 			<button type={type ?? 'submit'} disabled={disabled} onClick={onClick} className={baseClass}>

@@ -305,11 +305,10 @@ const Contact: React.FC = () => {
 								onFocus={() => setLastUpdatedField(input.name)}
 								onMouseEnter={() => setLastUpdatedField(input.name)}
 								onChange={handleInputChange}
-								className={`${
-									theme === 'dark'
+								className={`${theme === 'dark'
 										? 'dark-mode-shadow bg-[--blackblue] '
 										: 'dark-shadow bg-[--icewhite] '
-								}`}
+									}`}
 							/>
 						))}
 						<div className='mb-8 w-full'>
@@ -325,11 +324,10 @@ const Contact: React.FC = () => {
 									(service) => (
 										<label
 											key={service}
-											className={`cursor-pointer rounded-lg p-4 text-[16px] text-[#9ca3af] transition-all ${
-												theme === 'dark'
+											className={`cursor-pointer rounded-lg p-4 text-[16px] text-[#9ca3af] transition-all ${theme === 'dark'
 													? 'dark-mode-shadow bg-[--blackblue]'
 													: 'dark-shadow bg-[--icewhite]'
-											}`}
+												}`}
 										>
 											<div className='flex items-center gap-3'>
 												<input
@@ -342,15 +340,14 @@ const Contact: React.FC = () => {
 													required
 												/>
 												<div
-													className={`flex h-7 w-7 items-center justify-center rounded-full border-2 border-[--mint] ${
-														selectedService === service ? 'bg-[--mint]' : ''
-													}`}
+													className={`flex h-7 w-7 items-center justify-center rounded-full border-2 border-[--purple] ${selectedService === service ? 'bg-[--purple]' : ''
+														}`}
 												>
 													{selectedService === service && (
-														<div className='h-4 w-4 rounded-full bg-mint'></div>
+														<div className='h-4 w-4 rounded-full bg-white/70'></div>
 													)}
 												</div>
-												<span className={selectedService === service ? 'text-[--mint]' : ''}>
+												<span className={selectedService === service ? 'text-[--purple]' : ''}>
 													{service}
 												</span>
 											</div>
@@ -373,9 +370,8 @@ const Contact: React.FC = () => {
 							onFocus={() => setLastUpdatedField(contactData.textarea.name)}
 							onMouseEnter={() => setLastUpdatedField(contactData.textarea.name)}
 							onChange={handleInputChange}
-							className={`${
-								theme === 'dark' ? 'dark-mode-shadow bg-[--blackblue]' : 'dark-shadow bg-[--icewhite]'
-							}`}
+							className={`${theme === 'dark' ? 'dark-mode-shadow bg-[--blackblue]' : 'dark-shadow bg-[--icewhite]'
+								}`}
 						/>
 						<div className='privacy-checkbox flex gap-12'>
 							<label className='block h-2 w-2 cursor-pointer' htmlFor='checkbox-label'>

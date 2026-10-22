@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from './Button'
 import RadialGradient from './RadialGradient'
+import ParticleField from './ParticleField'
 import { headerIntroData } from '../assets/lib/data'
 import { useSectionInView } from '../assets/lib/hooks'
 import { useActiveSectionContext } from '../context/active-section-context'
@@ -31,10 +32,11 @@ const HeaderIntro: React.FC = () => {
 
 	return (
 		<section
-			className='hero flex h-full flex-col items-center justify-center gap-10 max-lg:h-full max-lg:gap-6'
+			className='hero relative flex h-full flex-col items-center justify-center gap-10 max-lg:h-full max-lg:gap-6'
 			ref={ref}
 			id='home'
 		>
+			<ParticleField />
 			<RadialGradient scale='scale-y-125' opacity='opacity-30' />
 
 			<img

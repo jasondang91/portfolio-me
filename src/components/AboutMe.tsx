@@ -44,7 +44,7 @@ const AboutMe: React.FC = () => {
 	return (
 		<React.Fragment>
 			<section className='about-me relative mt-16' id='about-me' ref={ref}>
-				<div className='title-container flex w-1/2 flex-col items-center justify-center gap-6 p-32 max-lg:w-full max-lg:items-start max-lg:p-16'>
+				<div className='title-container flex w-1/2 flex-col items-center justify-center gap-6 p-32 pb-0 max-lg:w-full max-lg:items-start max-lg:p-16 max-lg:pb-0'>
 					<motion.div
 						ref={animationReference}
 						style={{
@@ -75,7 +75,7 @@ const AboutMe: React.FC = () => {
 				<div className='mb-16 flex flex-row items-center justify-center gap-6 p-12 pl-16 pr-16 max-lg:flex-col md:p-16 md:pl-32 md:pr-32 min-[1921px]:mb-48 min-[1921px]:px-[45rem]'>
 					<article
 						className='pl-60 max-lg:p-0'
-						style={{ perspective: '600px' }}
+						style={{ perspective: '400px' }}
 						onMouseMove={(e) => {
 							const el = e.currentTarget
 							const rect = el.getBoundingClientRect()
@@ -103,6 +103,8 @@ const AboutMe: React.FC = () => {
 								transition: 'transform 0.15s ease-out',
 								transformStyle: 'preserve-3d',
 								willChange: 'transform',
+								maxWidth: '100%',
+								maxHeight: '750px'
 							}}
 						/>
 					</article>
